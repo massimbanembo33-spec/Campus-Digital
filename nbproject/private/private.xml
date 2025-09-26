@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/simba/NetBeansProjects/Campus%20Digital/src/campus/digital/Main.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus%20Digital/src/campus/digital/view/LoginFrame.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus%20Digital/src/campus/digital/controller/LoginController.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus%20Digital/src/campus/digital/view/AdministradorFrame.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus%20Digital/src/campus/digital/model/Aluno.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus%20Digital/src/campus/digital/model/Docente.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus%20Digital/src/campus/digital/model/Administrador.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus%20Digital/src/campus/digital/model/Funcionario.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus%20Digital/src/campus/digital/model/Usuarios.java</file>
+        </group>
+    </open-files>
+</project-private>
