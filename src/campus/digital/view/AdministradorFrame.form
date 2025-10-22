@@ -85,18 +85,18 @@
                                   <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jButton50" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="jButton51" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="jButton52" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="jButton53" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="jButton55" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
-                              <Component id="jButton54" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
+                              <Component id="btn_cadastrar_do_docente" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
+                              <Component id="btn_eliminar_do_docente" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
+                              <Component id="btn_actualizar_do_docente" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
+                              <Component id="btn_limpar_do_docente" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
+                              <Component id="btn_mostrar_todos_do_docente" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
+                              <Component id="btn_pesquisa_do_docente" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="74" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jTextField28" min="-2" pref="240" max="-2" attributes="0"/>
+                          <Component id="txt_codigo_de_pesquisa_do_docente" min="-2" pref="240" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -107,26 +107,26 @@
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton50" min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="btn_cadastrar_do_docente" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton51" min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="btn_eliminar_do_docente" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton52" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="btn_actualizar_do_docente" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton53" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="btn_limpar_do_docente" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton55" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="btn_mostrar_todos_do_docente" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace pref="60" max="32767" attributes="0"/>
-                          <Component id="jButton54" min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="btn_pesquisa_do_docente" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jTextField28" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="txt_codigo_de_pesquisa_do_docente" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton50">
+                <Component class="javax.swing.JButton" name="btn_cadastrar_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -139,8 +139,11 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cadastrar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cadastrar_do_docenteActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton51">
+                <Component class="javax.swing.JButton" name="btn_eliminar_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -154,7 +157,7 @@
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton52">
+                <Component class="javax.swing.JButton" name="btn_actualizar_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -168,7 +171,7 @@
                     <Property name="text" type="java.lang.String" value="Atualizar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton53">
+                <Component class="javax.swing.JButton" name="btn_limpar_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -181,6 +184,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Limpar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_limpar_do_docenteActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel49">
                   <Properties>
@@ -196,7 +202,7 @@
                     <Property name="text" type="java.lang.String" value="Controles"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton54">
+                <Component class="javax.swing.JButton" name="btn_pesquisa_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -210,14 +216,14 @@
                     <Property name="text" type="java.lang.String" value="Pesquisa"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField28">
+                <Component class="javax.swing.JTextField" name="txt_codigo_de_pesquisa_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton55">
+                <Component class="javax.swing.JButton" name="btn_mostrar_todos_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -258,7 +264,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable3">
+                <Component class="javax.swing.JTable" name="tbl_tabela_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="0" red="0" type="rgb"/>
@@ -281,7 +287,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btn_logout_do_docente">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="36" green="1a" red="2" type="rgb"/>
@@ -295,7 +301,7 @@
                 <Property name="text" type="java.lang.String" value="Logout"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_logout_do_docenteActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -324,66 +330,63 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel6" min="-2" pref="235" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField6" min="-2" pref="209" max="-2" attributes="0"/>
+                                  <Component id="txt_data_de_nascimento_do_docente" min="-2" pref="209" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                                   <Component id="jLabel17" min="-2" pref="156" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField7" min="-2" pref="230" max="-2" attributes="0"/>
+                                  <Component id="txt_numero_de_celular_do_docente" min="-2" pref="230" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField8" min="-2" pref="439" max="-2" attributes="0"/>
+                                  <Component id="txt_email_do_docente" min="-2" pref="439" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                  <Component id="jComboBox8" min="-2" pref="190" max="-2" attributes="0"/>
+                                  <Component id="cbx_turno_do_docente" min="-2" pref="190" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel13" min="-2" pref="101" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbx_cadeira_do_docente" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                                   <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jComboBox6" min="-2" pref="281" max="-2" attributes="0"/>
+                                  <Component id="cbx_nivel_academico_do_docente" min="-2" pref="281" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel23" min="-2" pref="163" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jPasswordField8" min="-2" pref="281" max="-2" attributes="0"/>
+                                  <Component id="pwd_senha_do_docente" min="-2" pref="281" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                                   <Component id="jLabel24" min="-2" pref="209" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jPasswordField9" min="-2" pref="281" max="-2" attributes="0"/>
+                                  <Component id="pwd_confirmacao_de_senha_do_docente" min="-2" pref="281" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel12" min="-2" pref="191" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextField4" min="-2" pref="511" max="-2" attributes="0"/>
+                                          <Component id="txt_nome_do_docente" min="-2" pref="511" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel46" min="-2" pref="42" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextField27" min="-2" pref="366" max="-2" attributes="0"/>
+                                          <Component id="txt_bi_do_docente" min="-2" pref="366" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="jLabel47" min="-2" pref="170" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
                                           <Component id="jLabel7" min="-2" pref="72" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jComboBox11" min="-2" pref="66" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="cbx_sexo_do_docente" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                          <Component id="jComboBox10" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="cbx_nacionalidade_do_docente" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -403,45 +406,45 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField4" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txt_nome_do_docente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox11" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="cbx_sexo_do_docente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField27" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txt_bi_do_docente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox10" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="cbx_nacionalidade_do_docente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField6" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txt_data_de_nascimento_do_docente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel17" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jTextField7" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="txt_numero_de_celular_do_docente" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel13" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jComboBox3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="cbx_cadeira_do_docente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel35" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jComboBox6" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="cbx_nivel_academico_do_docente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel18" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jTextField8" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txt_email_do_docente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel44" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jComboBox8" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="cbx_turno_do_docente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel23" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jPasswordField8" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="pwd_senha_do_docente" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                               <Component id="jLabel24" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jPasswordField9" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="pwd_confirmacao_de_senha_do_docente" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="43" max="32767" attributes="0"/>
                       </Group>
@@ -456,14 +459,14 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="txt_nome_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_nome_do_docenteActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel6">
@@ -488,7 +491,7 @@
                     <Property name="text" type="java.lang.String" value="Sexo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JTextField" name="txt_data_de_nascimento_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -531,7 +534,7 @@
                     <Property name="text" type="java.lang.String" value="Cadeira"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox3">
+                <Component class="javax.swing.JComboBox" name="cbx_cadeira_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -540,22 +543,23 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="10">
-                        <StringItem index="0" value="Analise Matematica I"/>
-                        <StringItem index="1" value="Analise Matematica II"/>
-                        <StringItem index="2" value="Programacao I"/>
-                        <StringItem index="3" value="Programacao II"/>
-                        <StringItem index="4" value="Algoritmos"/>
-                        <StringItem index="5" value="Metodos de Estudos"/>
-                        <StringItem index="6" value="MIC"/>
-                        <StringItem index="7" value="Estatistica I"/>
-                        <StringItem index="8" value="Estatistica II"/>
-                        <StringItem index="9" value="Economia e Gestao De Empresas"/>
+                      <StringArray count="11">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="Analise Matematica I"/>
+                        <StringItem index="2" value="Analise Matematica II"/>
+                        <StringItem index="3" value="Programacao I"/>
+                        <StringItem index="4" value="Programacao II"/>
+                        <StringItem index="5" value="Algoritmos"/>
+                        <StringItem index="6" value="Metodos de Estudos"/>
+                        <StringItem index="7" value="MIC"/>
+                        <StringItem index="8" value="Estatistica I"/>
+                        <StringItem index="9" value="Estatistica II"/>
+                        <StringItem index="10" value="Economia e Gestao De Empresas"/>
                       </StringArray>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbx_cadeira_do_docenteActionPerformed"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -572,7 +576,7 @@
                     <Property name="text" type="java.lang.String" value="N. de Celular"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField7">
+                <Component class="javax.swing.JTextField" name="txt_numero_de_celular_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -590,7 +594,7 @@
                     <Property name="text" type="java.lang.String" value="Email"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField8">
+                <Component class="javax.swing.JTextField" name="txt_email_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -630,7 +634,7 @@
                     <Property name="text" type="java.lang.String" value="Nivel Academico"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox6">
+                <Component class="javax.swing.JComboBox" name="cbx_nivel_academico_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -639,15 +643,17 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value="Licenciatura"/>
-                        <StringItem index="1" value="Mestrado"/>
-                        <StringItem index="2" value="Doutoramento"/>
+                      <StringArray count="5">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="Bacharelo"/>
+                        <StringItem index="2" value="Licenciatura"/>
+                        <StringItem index="3" value="Mestrado"/>
+                        <StringItem index="4" value="Doutoramento"/>
                       </StringArray>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox6ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbx_nivel_academico_do_docenteActionPerformed"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -664,7 +670,7 @@
                     <Property name="text" type="java.lang.String" value="Turno"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox8">
+                <Component class="javax.swing.JComboBox" name="cbx_turno_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -673,28 +679,29 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value="Diurno"/>
-                        <StringItem index="1" value="Vespertino"/>
-                        <StringItem index="2" value="Noturno"/>
+                      <StringArray count="4">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="Diurno"/>
+                        <StringItem index="2" value="Vespertino"/>
+                        <StringItem index="3" value="Noturno"/>
                       </StringArray>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox8ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbx_turno_do_docenteActionPerformed"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JPasswordField" name="jPasswordField8">
+                <Component class="javax.swing.JPasswordField" name="pwd_senha_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JPasswordField" name="jPasswordField9">
+                <Component class="javax.swing.JPasswordField" name="pwd_confirmacao_de_senha_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -712,7 +719,7 @@
                     <Property name="text" type="java.lang.String" value="B.I"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField27">
+                <Component class="javax.swing.JTextField" name="txt_bi_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -730,7 +737,7 @@
                     <Property name="text" type="java.lang.String" value="Nacionalidade"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox10">
+                <Component class="javax.swing.JComboBox" name="cbx_nacionalidade_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -739,25 +746,28 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="7">
-                        <StringItem index="0" value="Mocambicana"/>
-                        <StringItem index="1" value="Tanzaniana"/>
-                        <StringItem index="2" value="Zimbabuiana"/>
-                        <StringItem index="3" value="Sul Africana"/>
-                        <StringItem index="4" value="Brasileira"/>
-                        <StringItem index="5" value="Inglesa"/>
-                        <StringItem index="6" value="Americana"/>
+                      <StringArray count="10">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="Mocambicana"/>
+                        <StringItem index="2" value="Tanzaniana"/>
+                        <StringItem index="3" value="Zimbabuiana"/>
+                        <StringItem index="4" value="Sul Africana"/>
+                        <StringItem index="5" value="Brasileira"/>
+                        <StringItem index="6" value="Inglesa"/>
+                        <StringItem index="7" value="Americana"/>
+                        <StringItem index="8" value="Chinesa"/>
+                        <StringItem index="9" value="Japonesa"/>
                       </StringArray>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox10ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbx_nacionalidade_do_docenteActionPerformed"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox11">
+                <Component class="javax.swing.JComboBox" name="cbx_sexo_do_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -766,14 +776,15 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="2">
-                        <StringItem index="0" value="M"/>
-                        <StringItem index="1" value="F"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="M"/>
+                        <StringItem index="2" value="F"/>
                       </StringArray>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox11ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbx_sexo_do_docenteActionPerformed"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -1123,10 +1134,10 @@
                                   <Component id="jLabel14" min="-2" pref="191" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jTextField9" min="-2" pref="511" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" pref="72" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jComboBox12" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Component id="jComboBox12" pref="127" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1390,9 +1401,10 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="2">
-                        <StringItem index="0" value="M"/>
-                        <StringItem index="1" value="F"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="M"/>
+                        <StringItem index="2" value="F"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1681,7 +1693,7 @@
                                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Group type="102" attributes="0">
@@ -1732,14 +1744,14 @@
                                                   </Group>
                                                   <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
                                               </Group>
-                                              <Group type="102" alignment="1" attributes="0">
+                                              <Group type="102" attributes="0">
                                                   <Component id="jLabel33" min="-2" pref="191" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="jTextField14" min="-2" pref="511" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
                                                   <Component id="jLabel27" min="-2" pref="63" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox13" min="-2" pref="66" max="-2" attributes="0"/>
+                                                  <Component id="jComboBox13" min="-2" pref="139" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -1823,10 +1835,8 @@
                                   <Component id="jTextField25" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                   <Component id="jLabel16" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="jComboBox2" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jComboBox2" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="jLabel5" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
@@ -2140,9 +2150,10 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="2">
-                        <StringItem index="0" value="M"/>
-                        <StringItem index="1" value="F"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="M"/>
+                        <StringItem index="2" value="F"/>
                       </StringArray>
                     </Property>
                   </Properties>

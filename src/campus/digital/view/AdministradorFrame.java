@@ -4,6 +4,15 @@
  */
 package campus.digital.view;
 
+import campus.digital.controller.AdministradorController;
+import campus.digital.controller.helper.AdministradorHelper;
+import campus.digital.model.Docente;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author simba
@@ -12,11 +21,16 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdministradorFrame.class.getName());
 
+    private final AdministradorController controller;
+    private final AdministradorHelper helper;
     /**
      * Creates new form Administrador
      */
     public AdministradorFrame() {
         initComponents();
+        
+        controller = new AdministradorController(this);
+        helper = new AdministradorHelper(this);
     }
 
     /**
@@ -31,44 +45,44 @@ public class AdministradorFrame extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
-        jButton50 = new javax.swing.JButton();
-        jButton51 = new javax.swing.JButton();
-        jButton52 = new javax.swing.JButton();
-        jButton53 = new javax.swing.JButton();
+        btn_cadastrar_do_docente = new javax.swing.JButton();
+        btn_eliminar_do_docente = new javax.swing.JButton();
+        btn_actualizar_do_docente = new javax.swing.JButton();
+        btn_limpar_do_docente = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
-        jButton54 = new javax.swing.JButton();
-        jTextField28 = new javax.swing.JTextField();
-        jButton55 = new javax.swing.JButton();
+        btn_pesquisa_do_docente = new javax.swing.JButton();
+        txt_codigo_de_pesquisa_do_docente = new javax.swing.JTextField();
+        btn_mostrar_todos_do_docente = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tbl_tabela_do_docente = new javax.swing.JTable();
+        btn_logout_do_docente = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        jTextField4 = new javax.swing.JTextField();
+        txt_nome_do_docente = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txt_data_de_nascimento_do_docente = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbx_cadeira_do_docente = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txt_numero_de_celular_do_docente = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txt_email_do_docente = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        cbx_nivel_academico_do_docente = new javax.swing.JComboBox<>();
         jLabel44 = new javax.swing.JLabel();
-        jComboBox8 = new javax.swing.JComboBox<>();
-        jPasswordField8 = new javax.swing.JPasswordField();
-        jPasswordField9 = new javax.swing.JPasswordField();
+        cbx_turno_do_docente = new javax.swing.JComboBox<>();
+        pwd_senha_do_docente = new javax.swing.JPasswordField();
+        pwd_confirmacao_de_senha_do_docente = new javax.swing.JPasswordField();
         jLabel46 = new javax.swing.JLabel();
-        jTextField27 = new javax.swing.JTextField();
+        txt_bi_do_docente = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
-        jComboBox10 = new javax.swing.JComboBox<>();
-        jComboBox11 = new javax.swing.JComboBox<>();
+        cbx_nacionalidade_do_docente = new javax.swing.JComboBox<>();
+        cbx_sexo_do_docente = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
@@ -161,42 +175,52 @@ public class AdministradorFrame extends javax.swing.JFrame {
         jPanel16.setBackground(new java.awt.Color(0, 7, 22));
         jPanel16.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton50.setBackground(new java.awt.Color(255, 255, 255));
-        jButton50.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
-        jButton50.setForeground(new java.awt.Color(0, 0, 0));
-        jButton50.setText("Cadastrar");
+        btn_cadastrar_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        btn_cadastrar_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
+        btn_cadastrar_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        btn_cadastrar_do_docente.setText("Cadastrar");
+        btn_cadastrar_do_docente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrar_do_docenteActionPerformed(evt);
+            }
+        });
 
-        jButton51.setBackground(new java.awt.Color(255, 255, 255));
-        jButton51.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
-        jButton51.setForeground(new java.awt.Color(0, 0, 0));
-        jButton51.setText("Eliminar");
+        btn_eliminar_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        btn_eliminar_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
+        btn_eliminar_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        btn_eliminar_do_docente.setText("Eliminar");
 
-        jButton52.setBackground(new java.awt.Color(255, 255, 255));
-        jButton52.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
-        jButton52.setForeground(new java.awt.Color(0, 0, 0));
-        jButton52.setText("Atualizar");
+        btn_actualizar_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        btn_actualizar_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
+        btn_actualizar_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        btn_actualizar_do_docente.setText("Atualizar");
 
-        jButton53.setBackground(new java.awt.Color(255, 255, 255));
-        jButton53.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
-        jButton53.setForeground(new java.awt.Color(0, 0, 0));
-        jButton53.setText("Limpar");
+        btn_limpar_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        btn_limpar_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
+        btn_limpar_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        btn_limpar_do_docente.setText("Limpar");
+        btn_limpar_do_docente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpar_do_docenteActionPerformed(evt);
+            }
+        });
 
         jLabel49.setBackground(new java.awt.Color(255, 255, 255));
         jLabel49.setFont(new java.awt.Font("Liberation Sans Narrow", 3, 36)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(255, 255, 255));
         jLabel49.setText("Controles");
 
-        jButton54.setBackground(new java.awt.Color(255, 255, 255));
-        jButton54.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
-        jButton54.setForeground(new java.awt.Color(0, 0, 0));
-        jButton54.setText("Pesquisa");
+        btn_pesquisa_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        btn_pesquisa_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
+        btn_pesquisa_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        btn_pesquisa_do_docente.setText("Pesquisa");
 
-        jTextField28.setBackground(new java.awt.Color(255, 255, 255));
+        txt_codigo_de_pesquisa_do_docente.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton55.setBackground(new java.awt.Color(255, 255, 255));
-        jButton55.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
-        jButton55.setForeground(new java.awt.Color(0, 0, 0));
-        jButton55.setText("Mostrar Todos");
+        btn_mostrar_todos_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        btn_mostrar_todos_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
+        btn_mostrar_todos_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        btn_mostrar_todos_do_docente.setText("Mostrar Todos");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -208,16 +232,16 @@ public class AdministradorFrame extends javax.swing.JFrame {
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLabel49)
                         .addGap(122, 122, 122))
-                    .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton51, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton52, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton53, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton55, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton54, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_cadastrar_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_eliminar_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_actualizar_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_limpar_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_mostrar_todos_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_pesquisa_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(74, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_codigo_de_pesquisa_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
         );
         jPanel16Layout.setVerticalGroup(
@@ -226,19 +250,19 @@ public class AdministradorFrame extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jLabel49)
                 .addGap(18, 18, 18)
-                .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_cadastrar_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton51, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_eliminar_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton52, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_actualizar_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton53, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_limpar_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton55, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_mostrar_todos_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(jButton54, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_pesquisa_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_codigo_de_pesquisa_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
 
@@ -248,10 +272,10 @@ public class AdministradorFrame extends javax.swing.JFrame {
         jLabel8.setText("Bem vindo Administrador");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 540, 90));
 
-        jTable3.setBackground(new java.awt.Color(0, 0, 51));
-        jTable3.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 1, 18)); // NOI18N
-        jTable3.setForeground(new java.awt.Color(255, 255, 255));
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_tabela_do_docente.setBackground(new java.awt.Color(0, 0, 51));
+        tbl_tabela_do_docente.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 1, 18)); // NOI18N
+        tbl_tabela_do_docente.setForeground(new java.awt.Color(255, 255, 255));
+        tbl_tabela_do_docente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -262,27 +286,27 @@ public class AdministradorFrame extends javax.swing.JFrame {
                 "Nomes", "ID", "Senha", "Curso"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tbl_tabela_do_docente);
 
         jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 670, 1130, 280));
 
-        jButton1.setBackground(new java.awt.Color(2, 26, 54));
-        jButton1.setFont(new java.awt.Font("Liberation Mono", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Logout");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_logout_do_docente.setBackground(new java.awt.Color(2, 26, 54));
+        btn_logout_do_docente.setFont(new java.awt.Font("Liberation Mono", 1, 24)); // NOI18N
+        btn_logout_do_docente.setForeground(new java.awt.Color(255, 255, 255));
+        btn_logout_do_docente.setText("Logout");
+        btn_logout_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_logout_do_docenteActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 40, 190, 60));
+        jPanel2.add(btn_logout_do_docente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 40, 190, 60));
 
         jPanel8.setBackground(new java.awt.Color(0, 7, 22));
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txt_nome_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        txt_nome_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txt_nome_do_docenteActionPerformed(evt);
             }
         });
 
@@ -294,7 +318,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Sexo");
 
-        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
+        txt_data_de_nascimento_do_docente.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
@@ -309,12 +333,12 @@ public class AdministradorFrame extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Cadeira");
 
-        jComboBox3.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox3.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Analise Matematica I", "Analise Matematica II", "Programacao I", "Programacao II", "Algoritmos", "Metodos de Estudos", "MIC", "Estatistica I", "Estatistica II", "Economia e Gestao De Empresas" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        cbx_cadeira_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        cbx_cadeira_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        cbx_cadeira_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Analise Matematica I", "Analise Matematica II", "Programacao I", "Programacao II", "Algoritmos", "Metodos de Estudos", "MIC", "Estatistica I", "Estatistica II", "Economia e Gestao De Empresas" }));
+        cbx_cadeira_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                cbx_cadeira_do_docenteActionPerformed(evt);
             }
         });
 
@@ -322,13 +346,13 @@ public class AdministradorFrame extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("N. de Celular");
 
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
+        txt_numero_de_celular_do_docente.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel18.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Email");
 
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
+        txt_email_do_docente.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel23.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
@@ -342,12 +366,12 @@ public class AdministradorFrame extends javax.swing.JFrame {
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Nivel Academico");
 
-        jComboBox6.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox6.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Licenciatura", "Mestrado", "Doutoramento" }));
-        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+        cbx_nivel_academico_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        cbx_nivel_academico_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        cbx_nivel_academico_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Bacharelo", "Licenciatura", "Mestrado", "Doutoramento" }));
+        cbx_nivel_academico_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox6ActionPerformed(evt);
+                cbx_nivel_academico_do_docenteActionPerformed(evt);
             }
         });
 
@@ -355,44 +379,44 @@ public class AdministradorFrame extends javax.swing.JFrame {
         jLabel44.setForeground(new java.awt.Color(255, 255, 255));
         jLabel44.setText("Turno");
 
-        jComboBox8.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox8.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diurno", "Vespertino", "Noturno" }));
-        jComboBox8.addActionListener(new java.awt.event.ActionListener() {
+        cbx_turno_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        cbx_turno_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        cbx_turno_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Diurno", "Vespertino", "Noturno" }));
+        cbx_turno_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox8ActionPerformed(evt);
+                cbx_turno_do_docenteActionPerformed(evt);
             }
         });
 
-        jPasswordField8.setBackground(new java.awt.Color(255, 255, 255));
+        pwd_senha_do_docente.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPasswordField9.setBackground(new java.awt.Color(255, 255, 255));
+        pwd_confirmacao_de_senha_do_docente.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel46.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(255, 255, 255));
         jLabel46.setText("B.I");
 
-        jTextField27.setBackground(new java.awt.Color(255, 255, 255));
+        txt_bi_do_docente.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel47.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(255, 255, 255));
         jLabel47.setText("Nacionalidade");
 
-        jComboBox10.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox10.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mocambicana", "Tanzaniana", "Zimbabuiana", "Sul Africana", "Brasileira", "Inglesa", "Americana" }));
-        jComboBox10.addActionListener(new java.awt.event.ActionListener() {
+        cbx_nacionalidade_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        cbx_nacionalidade_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        cbx_nacionalidade_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Mocambicana", "Tanzaniana", "Zimbabuiana", "Sul Africana", "Brasileira", "Inglesa", "Americana", "Chinesa", "Japonesa" }));
+        cbx_nacionalidade_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox10ActionPerformed(evt);
+                cbx_nacionalidade_do_docenteActionPerformed(evt);
             }
         });
 
-        jComboBox11.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox11.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
-        jComboBox11.addActionListener(new java.awt.event.ActionListener() {
+        cbx_sexo_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        cbx_sexo_do_docente.setForeground(new java.awt.Color(0, 0, 0));
+        cbx_sexo_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "M", "F" }));
+        cbx_sexo_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox11ActionPerformed(evt);
+                cbx_sexo_do_docenteActionPerformed(evt);
             }
         });
 
@@ -406,57 +430,55 @@ public class AdministradorFrame extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_data_de_nascimento_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(171, 171, 171)
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_numero_de_celular_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_email_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel44)
                         .addGap(47, 47, 47)
-                        .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cbx_turno_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbx_cadeira_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(177, 177, 177)
                         .addComponent(jLabel35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cbx_nivel_academico_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPasswordField8, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pwd_senha_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(75, 75, 75)
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPasswordField9, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pwd_confirmacao_de_senha_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_nome_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_bi_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(1, 1, 1))
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(jComboBox10, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbx_sexo_do_docente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(1, 1, 1))
+                            .addComponent(cbx_nacionalidade_do_docente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(47, Short.MAX_VALUE))
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel8Layout.createSequentialGroup()
@@ -469,40 +491,40 @@ public class AdministradorFrame extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(104, 104, 104)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_nome_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbx_sexo_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
-                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_bi_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel47)
-                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbx_nacionalidade_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_data_de_nascimento_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_numero_de_celular_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbx_cadeira_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbx_nivel_academico_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_email_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbx_turno_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pwd_senha_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pwd_confirmacao_de_senha_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel8Layout.createSequentialGroup()
@@ -716,7 +738,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
         jComboBox12.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox12.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "M", "F" }));
         jComboBox12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox12ActionPerformed(evt);
@@ -777,10 +799,10 @@ public class AdministradorFrame extends javax.swing.JFrame {
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(68, 68, 68)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox12, 0, 127, Short.MAX_VALUE)
                         .addGap(81, 81, 81))))
         );
         jPanel9Layout.setVerticalGroup(
@@ -1042,7 +1064,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
         jComboBox13.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox13.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "M", "F" }));
         jComboBox13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox13ActionPerformed(evt);
@@ -1075,7 +1097,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel10Layout.createSequentialGroup()
@@ -1122,7 +1144,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(231, 231, 231)))
                                 .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
@@ -1182,9 +1204,8 @@ public class AdministradorFrame extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -1237,17 +1258,17 @@ public class AdministradorFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txt_nome_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_do_docenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txt_nome_do_docenteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_logout_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logout_do_docenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_logout_do_docenteActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void cbx_cadeira_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_cadeira_do_docenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_cbx_cadeira_do_docenteActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
@@ -1260,6 +1281,118 @@ public class AdministradorFrame extends javax.swing.JFrame {
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton22ActionPerformed
+
+    public JComboBox<String> getCbx_cadeira_do_docente() {
+        return cbx_cadeira_do_docente;
+    }
+
+    public void setCbx_cadeira_do_docente(JComboBox<String> cbx_cadeira_do_docente) {
+        this.cbx_cadeira_do_docente = cbx_cadeira_do_docente;
+    }
+
+    public JComboBox<String> getCbx_nacionalidade_do_docente() {
+        return cbx_nacionalidade_do_docente;
+    }
+
+    public void setCbx_nacionalidade_do_docente(JComboBox<String> cbx_nacionalidade_do_docente) {
+        this.cbx_nacionalidade_do_docente = cbx_nacionalidade_do_docente;
+    }
+
+    public JComboBox<String> getCbx_nivel_academico_do_docente() {
+        return cbx_nivel_academico_do_docente;
+    }
+
+    public void setCbx_nivel_academico_do_docente(JComboBox<String> cbx_nivel_academico_do_docente) {
+        this.cbx_nivel_academico_do_docente = cbx_nivel_academico_do_docente;
+    }
+
+    public JComboBox<String> getCbx_sexo_do_docente() {
+        return cbx_sexo_do_docente;
+    }
+
+    public void setCbx_sexo_do_docente(JComboBox<String> cbx_sexo_do_docente) {
+        this.cbx_sexo_do_docente = cbx_sexo_do_docente;
+    }
+
+    public JComboBox<String> getCbx_turno_do_docente() {
+        return cbx_turno_do_docente;
+    }
+
+    public void setCbx_turno_do_docente(JComboBox<String> cbx_turno_do_docente) {
+        this.cbx_turno_do_docente = cbx_turno_do_docente;
+    }
+
+    public JPasswordField getPwd_confirmacao_de_senha_do_docente() {
+        return pwd_confirmacao_de_senha_do_docente;
+    }
+
+    public void setPwd_confirmacao_de_senha_do_docente(JPasswordField pwd_confirmacao_de_senha_do_docente) {
+        this.pwd_confirmacao_de_senha_do_docente = pwd_confirmacao_de_senha_do_docente;
+    }
+
+    public JPasswordField getPwd_senha_do_docente() {
+        return pwd_senha_do_docente;
+    }
+
+    public void setPwd_senha_do_docente(JPasswordField pwd_senha_do_docente) {
+        this.pwd_senha_do_docente = pwd_senha_do_docente;
+    }
+
+    public JTable getTbl_tabela_do_docente() {
+        return tbl_tabela_do_docente;
+    }
+
+    public void setTbl_tabela_do_docente(JTable tbl_tabela_do_docente) {
+        this.tbl_tabela_do_docente = tbl_tabela_do_docente;
+    }
+
+    public JTextField getTxt_bi_do_docente() {
+        return txt_bi_do_docente;
+    }
+
+    public void setTxt_bi_do_docente(JTextField txt_bi_do_docente) {
+        this.txt_bi_do_docente = txt_bi_do_docente;
+    }
+
+    public JTextField getTxt_codigo_de_pesquisa_do_docente() {
+        return txt_codigo_de_pesquisa_do_docente;
+    }
+
+    public void setTxt_codigo_de_pesquisa_do_docente(JTextField txt_codigo_de_pesquisa_do_docente) {
+        this.txt_codigo_de_pesquisa_do_docente = txt_codigo_de_pesquisa_do_docente;
+    }
+
+    public JTextField getTxt_data_de_nascimento_do_docente() {
+        return txt_data_de_nascimento_do_docente;
+    }
+
+    public void setTxt_data_de_nascimento_do_docente(JTextField txt_data_de_nascimento_do_docente) {
+        this.txt_data_de_nascimento_do_docente = txt_data_de_nascimento_do_docente;
+    }
+
+    public JTextField getTxt_email_do_docente() {
+        return txt_email_do_docente;
+    }
+
+    public void setTxt_email_do_docente(JTextField txt_email_do_docente) {
+        this.txt_email_do_docente = txt_email_do_docente;
+    }
+
+    public JTextField getTxt_nome_do_docente() {
+        return txt_nome_do_docente;
+    }
+
+    public void setTxt_nome_do_docente(JTextField txt_nome_do_docente) {
+        this.txt_nome_do_docente = txt_nome_do_docente;
+    }
+
+    public JTextField getTxt_numero_de_celular_do_docente() {
+        return txt_numero_de_celular_do_docente;
+    }
+
+    public void setTxt_numero_de_celular_do_docente(JTextField txt_numero_de_celular_do_docente) {
+        this.txt_numero_de_celular_do_docente = txt_numero_de_celular_do_docente;
+    }
 
     private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
         // TODO add your handling code here:
@@ -1277,25 +1410,25 @@ public class AdministradorFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+    private void cbx_nivel_academico_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_nivel_academico_do_docenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox6ActionPerformed
+    }//GEN-LAST:event_cbx_nivel_academico_do_docenteActionPerformed
 
-    private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
+    private void cbx_turno_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_turno_do_docenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox8ActionPerformed
+    }//GEN-LAST:event_cbx_turno_do_docenteActionPerformed
 
     private void jComboBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox9ActionPerformed
 
-    private void jComboBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox10ActionPerformed
+    private void cbx_nacionalidade_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_nacionalidade_do_docenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox10ActionPerformed
+    }//GEN-LAST:event_cbx_nacionalidade_do_docenteActionPerformed
 
-    private void jComboBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox11ActionPerformed
+    private void cbx_sexo_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_sexo_do_docenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox11ActionPerformed
+    }//GEN-LAST:event_cbx_sexo_do_docenteActionPerformed
 
     private void jComboBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox12ActionPerformed
         // TODO add your handling code here:
@@ -1310,8 +1443,34 @@ public class AdministradorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox14ActionPerformed
 
     private void jPasswordField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField10ActionPerformed
-        // TODO add your handling code here:
+        // TODO add yo ur handling code here:
     }//GEN-LAST:event_jPasswordField10ActionPerformed
+
+    private void btn_cadastrar_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrar_do_docenteActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+        Docente docente = helper.obter_modelo_do_docente();// retorna null se validação falhar
+        
+        if (docente == null){
+            JOptionPane.showMessageDialog(null, "Docente esta vazio/incompleto");
+            return;
+        }
+        else{
+            this.controller.cadastrar_docente(docente);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar " + e.getMessage());
+       
+        }
+    }//GEN-LAST:event_btn_cadastrar_do_docenteActionPerformed
+
+    private void btn_limpar_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpar_do_docenteActionPerformed
+        // TODO add your handling code here:
+        this.helper.limpar_campos_docente();
+    }//GEN-LAST:event_btn_limpar_do_docenteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1339,15 +1498,20 @@ public class AdministradorFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_actualizar_do_docente;
+    private javax.swing.JButton btn_cadastrar_do_docente;
+    private javax.swing.JButton btn_eliminar_do_docente;
+    private javax.swing.JButton btn_limpar_do_docente;
+    private javax.swing.JButton btn_logout_do_docente;
+    private javax.swing.JButton btn_mostrar_todos_do_docente;
+    private javax.swing.JButton btn_pesquisa_do_docente;
+    private javax.swing.JComboBox<String> cbx_cadeira_do_docente;
+    private javax.swing.JComboBox<String> cbx_nacionalidade_do_docente;
+    private javax.swing.JComboBox<String> cbx_nivel_academico_do_docente;
+    private javax.swing.JComboBox<String> cbx_sexo_do_docente;
+    private javax.swing.JComboBox<String> cbx_turno_do_docente;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton50;
-    private javax.swing.JButton jButton51;
-    private javax.swing.JButton jButton52;
-    private javax.swing.JButton jButton53;
-    private javax.swing.JButton jButton54;
-    private javax.swing.JButton jButton55;
     private javax.swing.JButton jButton56;
     private javax.swing.JButton jButton57;
     private javax.swing.JButton jButton58;
@@ -1360,17 +1524,12 @@ public class AdministradorFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton65;
     private javax.swing.JButton jButton66;
     private javax.swing.JButton jButton67;
-    private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox11;
     private javax.swing.JComboBox<String> jComboBox12;
     private javax.swing.JComboBox<String> jComboBox13;
     private javax.swing.JComboBox<String> jComboBox14;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1431,15 +1590,12 @@ public class AdministradorFrame extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField11;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JPasswordField jPasswordField7;
-    private javax.swing.JPasswordField jPasswordField8;
-    private javax.swing.JPasswordField jPasswordField9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
@@ -1451,14 +1607,17 @@ public class AdministradorFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JPasswordField pwd_confirmacao_de_senha_do_docente;
+    private javax.swing.JPasswordField pwd_senha_do_docente;
+    private javax.swing.JTable tbl_tabela_do_docente;
+    private javax.swing.JTextField txt_bi_do_docente;
+    private javax.swing.JTextField txt_codigo_de_pesquisa_do_docente;
+    private javax.swing.JTextField txt_data_de_nascimento_do_docente;
+    private javax.swing.JTextField txt_email_do_docente;
+    private javax.swing.JTextField txt_nome_do_docente;
+    private javax.swing.JTextField txt_numero_de_celular_do_docente;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,7 @@
  */
 package campus.digital.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -14,15 +14,17 @@ import java.util.Date;
 abstract public class Usuarios {
     
     protected String nome;
-    protected int ID;
+    protected String ID;
     protected char sexo;
     protected String numero_de_BI;
     protected String nacionalidade;
-    protected Date data_de_nascimento;
+    protected LocalDate data_de_nascimento;
     protected int numero_de_celular;
+    
+    public Usuarios(){} //- Para ser capaz de instanciar sem passar parrametros
 
     // Isso para ser capaz de criar um usuario com quase todos atributos (funcionarios)
-    public Usuarios(String nome, int ID, char sexo, Date data_de_nascimento, int numero_de_celular) {
+    public Usuarios(String nome, String ID, char sexo, LocalDate data_de_nascimento, int numero_de_celular) {
         this.nome = nome;
         this.ID = ID;
         this.sexo = sexo;
@@ -30,7 +32,7 @@ abstract public class Usuarios {
         this.numero_de_celular = numero_de_celular;
     }
     // Isso para ser capaz de criar um usuario com todos atributos (alunos, docentes)
-    public Usuarios(String nome, int ID, char sexo, String numero_de_BI, String nacionalidade, Date data_de_nascimento, int numero_de_celular) {
+    public Usuarios(String nome, String ID, char sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
         this.nome = nome;
         this.ID = ID;
         this.sexo = sexo;
@@ -48,11 +50,11 @@ abstract public class Usuarios {
         this.nome = nome;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
-
-    public void setID(int ID) {
+    
+    public void setID(String ID){
         this.ID = ID;
     }
 
@@ -80,11 +82,11 @@ abstract public class Usuarios {
         this.nacionalidade = nacionalidade;
     }
 
-    public Date getData_de_nascimento() {
+    public LocalDate getData_de_nascimento() {
         return data_de_nascimento;
     }
 
-    public void setData_de_nascimento(Date data_de_nascimento) {
+    public void setData_de_nascimento(LocalDate data_de_nascimento) {
         this.data_de_nascimento = data_de_nascimento;
     }
 

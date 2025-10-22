@@ -4,6 +4,7 @@
  */
 package campus.digital.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -13,20 +14,25 @@ import java.util.Date;
 public class Docente extends Usuarios{  
     
     protected String email_do_docente;
-    protected String senha;
-    protected String cedeira;
+    protected char[] senha;
+    protected char[] senha_repetida;
+    protected String cadeira;
     protected String nivel_academico;
     protected String horario_de_trabalho;
 
-    public Docente(String nome, int ID, char sexo, String numero_de_BI, String nacionalidade, Date data_de_nascimento, int numero_de_celular) {
+    public Docente() {} // - Para ser capaz de criar de instanciar sem passar nenhum parrametros
+    
+
+    public Docente(String nome, String ID, char sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
         super(nome, ID, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
     }
 
-    public Docente(String email_do_docente, String senha, String cedeira, String nivel_academico, String horario_de_trabalho, String nome, int ID, char sexo, String numero_de_BI, String nacionalidade, Date data_de_nascimento, int numero_de_celular) {
+    public Docente(String email_do_docente, char[] senha, char[] senha_repetida, String cadeira, String nivel_academico, String horario_de_trabalho, String nome, String ID, char sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
         super(nome, ID, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
         this.email_do_docente = email_do_docente;
         this.senha = senha;
-        this.cedeira = cedeira;
+        this.senha_repetida = senha_repetida;
+        this.cadeira = cadeira;
         this.nivel_academico = nivel_academico;
         this.horario_de_trabalho = horario_de_trabalho;
     }
@@ -39,20 +45,28 @@ public class Docente extends Usuarios{
         this.email_do_docente = email_do_docente;
     }
 
-    public String getSenha() {
+    public char[] getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(char[] senha) {
         this.senha = senha;
     }
-
-    public String getCedeira() {
-        return cedeira;
+    
+    public char[] getSenha_repetida() {
+        return senha_repetida;
+    }
+    
+    public void setSenha_repetida(char[] senha_repetida) {
+        this.senha_repetida = senha_repetida;
     }
 
-    public void setCedeira(String cedeira) {
-        this.cedeira = cedeira;
+    public String getCadeira() {
+        return cadeira;
+    }
+
+    public void setCadeira(String cadeira) {
+        this.cadeira = cadeira;
     }
 
     public String getNivel_academico() {
