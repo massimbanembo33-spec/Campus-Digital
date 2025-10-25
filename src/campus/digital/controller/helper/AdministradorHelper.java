@@ -6,6 +6,8 @@ package campus.digital.controller.helper;
 
 import campus.digital.model.Docente;
 import campus.digital.view.AdministradorFrame;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,9 +28,9 @@ public class AdministradorHelper {
         char sexo = (char) view.getCbx_sexo_do_docente().getSelectedIndex();
         String numero_de_BI = view.getTxt_bi_do_docente().getText();
         String nacionalidade = view.getCbx_nacionalidade_do_docente().getSelectedIndex() + "";
-        String data = view.getTxt_data_de_nascimento_do_docente().getText() + "";
+        String data = view.getTxt_data_de_nascimento_do_docente().getText();
         int numero_de_celular = Integer.parseInt(view.getTxt_numero_de_celular_do_docente().getText());
-        String email_do_docente = view.getTxt_email_do_docente().getText() + "";
+        String email_do_docente = view.getTxt_email_do_docente().getText();
         char [] senha = view.getPwd_senha_do_docente().getPassword();
         char [] senha_repetida = view.getPwd_confirmacao_de_senha_do_docente().getPassword();
         String cadeira = view.getCbx_cadeira_do_docente().getSelectedIndex() + "";
@@ -83,6 +85,35 @@ public class AdministradorHelper {
         view.getCbx_nivel_academico_do_docente().setSelectedIndex(0);
         view.getCbx_turno_do_docente().setSelectedIndex(0);
         JOptionPane.showMessageDialog(null, "Limpo!");
+    }
+    
+    public void mostrar_docente_na_view(Docente docente){
+        
+        view.getTxt_nome_do_docente().setText(docente.getNome());
+        view.getTxt_bi_do_docente().setText(docente.getNumero_de_BI());
+        
+        // Agora uma conversao rapida do LocalDate para String
+        LocalDate data = docente.getData_de_nascimento();
+        String data_convertida = data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        
+        // Agora podemos continuar a tirar os dados do objecto para a tela/view
+        view.getTxt_data_de_nascimento_do_docente().setText(data_convertida);
+        view.getTxt_numero_de_celular_do_docente().setText(docente.getNumero_de_celular() + "");
+        view.getTxt_email_do_docente().setText(docente.getEmail_do_docente());
+        
+        // De novo, agora devemos converter as senhas "char []" para "String"
+        
+        String senha = new String(docente.getSenha());
+        String senha_repetida = new String(docente.getSenha_repetida());
+        
+        //Agora podemos continuar
+        view.getPwd_senha_do_docente().setText(senha);
+        view.getPwd_confirmacao_de_senha_do_docente().setText(senha_repetida);
+        view.getCbx_sexo_do_docente().setSelectedItem(docente.getSexo());
+        view.getCbx_nacionalidade_do_docente().setSelectedItem(docente.getNacionalidade());
+        view.getCbx_cadeira_do_docente().setSelectedItem(docente.getCadeira());
+        view.getCbx_nivel_academico_do_docente().setSelectedItem(docente.getNivel_academico());
+        view.getCbx_turno_do_docente().setSelectedItem(docente.getHorario_de_trabalho());
     }
     
     

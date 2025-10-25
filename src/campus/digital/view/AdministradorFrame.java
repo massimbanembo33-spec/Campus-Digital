@@ -1448,28 +1448,12 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
     private void btn_cadastrar_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrar_do_docenteActionPerformed
         // TODO add your handling code here:
-        
-        try{
-        Docente docente = helper.obter_modelo_do_docente();// retorna null se validação falhar
-        
-        if (docente == null){
-            JOptionPane.showMessageDialog(null, "Docente esta vazio/incompleto");
-            return;
-        }
-        else{
-            this.controller.cadastrar_docente(docente);
-            }
-        }
-        catch (Exception e){
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar " + e.getMessage());
-       
-        }
+        this.controller.cadastrar_docente();
     }//GEN-LAST:event_btn_cadastrar_do_docenteActionPerformed
 
     private void btn_limpar_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpar_do_docenteActionPerformed
         // TODO add your handling code here:
-        this.helper.limpar_campos_docente();
+        this.controller.limpar_campos_do_docente();
     }//GEN-LAST:event_btn_limpar_do_docenteActionPerformed
 
     /**
