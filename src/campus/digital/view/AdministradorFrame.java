@@ -22,15 +22,14 @@ public class AdministradorFrame extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdministradorFrame.class.getName());
 
     private final AdministradorController controller;
-    private final AdministradorHelper helper;
+
     /**
      * Creates new form Administrador
      */
     public AdministradorFrame() {
         initComponents();
-        
+
         controller = new AdministradorController(this);
-        helper = new AdministradorHelper(this);
     }
 
     /**
@@ -55,7 +54,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
         btn_mostrar_todos_do_docente = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tbl_tabela_do_docente = new javax.swing.JTable();
+        tabela_docente = new javax.swing.JTable();
         btn_logout_do_docente = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         txt_nome_do_docente = new javax.swing.JTextField();
@@ -189,11 +188,21 @@ public class AdministradorFrame extends javax.swing.JFrame {
         btn_eliminar_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
         btn_eliminar_do_docente.setForeground(new java.awt.Color(0, 0, 0));
         btn_eliminar_do_docente.setText("Eliminar");
+        btn_eliminar_do_docente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminar_do_docenteActionPerformed(evt);
+            }
+        });
 
         btn_actualizar_do_docente.setBackground(new java.awt.Color(255, 255, 255));
         btn_actualizar_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
         btn_actualizar_do_docente.setForeground(new java.awt.Color(0, 0, 0));
         btn_actualizar_do_docente.setText("Atualizar");
+        btn_actualizar_do_docente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actualizar_do_docenteActionPerformed(evt);
+            }
+        });
 
         btn_limpar_do_docente.setBackground(new java.awt.Color(255, 255, 255));
         btn_limpar_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
@@ -214,6 +223,11 @@ public class AdministradorFrame extends javax.swing.JFrame {
         btn_pesquisa_do_docente.setFont(new java.awt.Font("Bitstream Charter", 1, 24)); // NOI18N
         btn_pesquisa_do_docente.setForeground(new java.awt.Color(0, 0, 0));
         btn_pesquisa_do_docente.setText("Pesquisa");
+        btn_pesquisa_do_docente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pesquisa_do_docenteActionPerformed(evt);
+            }
+        });
 
         txt_codigo_de_pesquisa_do_docente.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -272,21 +286,26 @@ public class AdministradorFrame extends javax.swing.JFrame {
         jLabel8.setText("Bem vindo Administrador");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 540, 90));
 
-        tbl_tabela_do_docente.setBackground(new java.awt.Color(0, 0, 51));
-        tbl_tabela_do_docente.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 1, 18)); // NOI18N
-        tbl_tabela_do_docente.setForeground(new java.awt.Color(255, 255, 255));
-        tbl_tabela_do_docente.setModel(new javax.swing.table.DefaultTableModel(
+        tabela_docente.setBackground(new java.awt.Color(0, 0, 51));
+        tabela_docente.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 1, 18)); // NOI18N
+        tabela_docente.setForeground(new java.awt.Color(255, 255, 255));
+        tabela_docente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Nomes", "ID", "Senha", "Curso"
+                "ID", "Nome", "Senha", "Curso"
             }
-        ));
-        jScrollPane3.setViewportView(tbl_tabela_do_docente);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tabela_docente);
 
         jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 670, 1130, 280));
 
@@ -335,7 +354,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
         cbx_cadeira_do_docente.setBackground(new java.awt.Color(255, 255, 255));
         cbx_cadeira_do_docente.setForeground(new java.awt.Color(0, 0, 0));
-        cbx_cadeira_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Analise Matematica I", "Analise Matematica II", "Programacao I", "Programacao II", "Algoritmos", "Metodos de Estudos", "MIC", "Estatistica I", "Estatistica II", "Economia e Gestao De Empresas" }));
+        cbx_cadeira_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Matemática", "Álgebra", "Cálculo Diferencial e Integral", "Geometria Analítica", "Trigonometria", "Estatística", "Probabilidade", "Física Geral", "Física Aplicada", "Química Geral", "Química Orgânica", "Química Inorgânica", "Termodinâmica", "Mecânica", "Eletricidade e Magnetismo", "Desenho Técnico", "Computação", "Programação", "Lógica de Programação", "Algoritmos", "Estruturas de Dados", "Banco de Dados", "Redes de Computadores", "Sistemas Operativos", "Inteligência Artificial", "Aprendizado de Máquina", "Engenharia de Software", "Análise de Sistemas", "Cibersegurança", "Arquitetura de Computadores", "Robótica", "Automação", "Gestão de Projetos", "Empreendedorismo", "Administração Geral", "Gestão Financeira", "Gestão de Recursos Humanos", "Gestão Estratégica", "Contabilidade", "Auditoria", "Economia", "Microeconomia", "Macroeconomia", "Finanças Públicas", "Comércio Internacional", "Marketing", "Publicidade e Comunicação", "Gestão Ambiental", "Planeamento Estratégico", "Matemática Financeira", "Logística", "Direito Constitucional", "Direito Civil", "Direito Penal", "Direito Administrativo", "Direito Comercial", "Direito Internacional", "Direito do Trabalho", "Criminologia", "Ciência Política", "Relações Internacionais", "Sociologia", "Antropologia", "Psicologia Geral", "Psicologia Social", "Psicologia do Desenvolvimento", "Psicologia Educacional", "Filosofia", "Lógica Filosófica", "Ética", "História da Filosofia", "Metodologia Científica", "Epistemologia", "Língua Portuguesa", "Língua Inglesa", "Linguística", "Literatura", "Comunicação Oral e Escrita", "História", "Geografia", "Antropologia Cultural", "Estudos Africanos", "Teologia", "Religião e Sociedade", "Educação e Pedagogia", "Didática", "Metodologia do Ensino", "Psicopedagogia", "Avaliação Educacional", "Planeamento Curricular", "Educação Inclusiva", "Gestão Escolar", "Biologia Geral", "Genética", "Ecologia", "Botânica", "Zoologia", "Fisiologia", "Microbiologia", "Bioquímica", "Anatomia Humana", "Histologia", "Farmacologia", "Saúde Pública", "Nutrição e Dietética", "Fisioterapia Aplicada", "Medicina Interna", "Enfermagem Geral", "Epidemiologia", "Primeiros Socorros", "Odontologia Preventiva", "Educação Física", "Treino Desportivo", "Cinesiologia", "Design Gráfico", "Design de Interiores", "Teoria das Cores", "Composição Visual", "Desenho Artístico", "Fotografia", "Cinema e Audiovisual", "Edição de Vídeo", "Música", "História da Arte", "Artes Cênicas", "Teatro", "Produção Cultural", "Geologia", "Ciências do Solo", "Meteorologia", "Oceanografia", "Agronomia", "Zootecnia", "Ciências do Ambiente", "Sustentabilidade", "Engenharia Ambiental", "Topografia", "Cartografia", "Tecnologia de Materiais", "Ciência e Tecnologia", "Inovação e Empreendedorismo", "Metodologia da Pesquisa", "Estatística Aplicada", "Ética Profissional", "Comunicação Empresarial", "Gestão da Qualidade", "Planeamento Urbano", "Arquitetura e Urbanismo", "Ergonomia", "Desenvolvimento Pessoal e Profissional" }));
         cbx_cadeira_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_cadeira_do_docenteActionPerformed(evt);
@@ -381,7 +400,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
         cbx_turno_do_docente.setBackground(new java.awt.Color(255, 255, 255));
         cbx_turno_do_docente.setForeground(new java.awt.Color(0, 0, 0));
-        cbx_turno_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Diurno", "Vespertino", "Noturno" }));
+        cbx_turno_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Manha", "Tarde", "Noite" }));
         cbx_turno_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_turno_do_docenteActionPerformed(evt);
@@ -389,6 +408,11 @@ public class AdministradorFrame extends javax.swing.JFrame {
         });
 
         pwd_senha_do_docente.setBackground(new java.awt.Color(255, 255, 255));
+        pwd_senha_do_docente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwd_senha_do_docenteActionPerformed(evt);
+            }
+        });
 
         pwd_confirmacao_de_senha_do_docente.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -404,7 +428,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
         cbx_nacionalidade_do_docente.setBackground(new java.awt.Color(255, 255, 255));
         cbx_nacionalidade_do_docente.setForeground(new java.awt.Color(0, 0, 0));
-        cbx_nacionalidade_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Mocambicana", "Tanzaniana", "Zimbabuiana", "Sul Africana", "Brasileira", "Inglesa", "Americana", "Chinesa", "Japonesa" }));
+        cbx_nacionalidade_do_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Afegão", "Africano", "Albanês", "Alemão", "Andorrano", "Angolano", "Antiguano", "Argentino", "Armênio", "Arubano", "Australiano", "Austríaco", "Azerbaijano", "Bahamense", "Bahreinita", "Bangladeshiano", "Barbadiano", "Belga", "Belizenho", "Beninense", "Bielorrusso", "Boliviano", "Bósnio", "Botsuano", "Brasileiro", "Britânico", "Bruneano", "Búlgaro", "Burquinense", "Burundiano", "Cabo-verdiano", "Camaronense", "Cambojano", "Canadense", "Catarense", "Cazaquistanês", "Centro-africano", "Chileno", "Chinês", "Cipriota", "Colombiano", "Comorense", "Congolês", "Costarriquenho", "Croata", "Cubano", "Curdo", "Dinamarquês", "Dominicano", "Egípcio", "Emiradense", "Equatoriano", "Eritreu", "Eslovaco", "Esloveno", "Espanhol", "Estadunidense", "Estoniano", "Etíope", "Fijiano", "Filipino", "Finlandês", "Francês", "Gabonês", "Gambiano", "Ganês", "Georgiano", "Grego", "Guatemalteco", "Guianense", "Guineense", "Haitiano", "Hondurenho", "Húngaro", "Iemenita", "Indiano", "Indonésio", "Iraniano", "Iraquiano", "Irlandês", "Islandês", "Israelense", "Italiano", "Jamaicano", "Japonês", "Jordaniano", "Queniano", "Kosovar", "Kuwaitiano", "Laociano", "Letão", "Libanês", "Liberiano", "Líbio", "Liechtensteinense", "Lituano", "Luxemburguês", "Macedônio", "Malaio", "Malauiano", "Maliano", "Maltês", "Marfinense", "Marroquino", "Mauriciano", "Mauritano", "Mexicano", "Moçambicano", "Moldavo", "Monegasco", "Mongol", "Montenegrino", "Birmanês", "Namibiano", "Nauruano", "Nepalês", "Neozelandês", "Nigeriano", "Nigerino", "Norueguês", "Omanense", "Paquistanês", "Palestino", "Panamenho", "Papua", "Paraguaio", "Peruano", "Polonês", "Português", "Porto-riquenho", "Quirguiz", "Romeno", "Ruandês", "Russo", "Salomônico", "Salvadorenho", "Samoano", "Sanmarinense", "São-tomense", "Saudita", "Senegalês", "Sérvio", "Seichelense", "Singapuriano", "Sírio", "Somali", "Sul-africano", "Sudanês", "Sueco", "Suíço", "Surinamês", "Tailandês", "Taiwanês", "Tadjiquistanês", "Tanzaniano", "Tcheco", "Togolês", "Tunisino", "Turco", "Turcomeno", "Ucraniano", "Ugandês", "Uruguaio", "Uzbeque", "Venezuelano", "Vietnamita", "Zambiano", "Zimbabuense" }));
         cbx_nacionalidade_do_docente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_nacionalidade_do_docenteActionPerformed(evt);
@@ -455,7 +479,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(pwd_senha_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(pwd_confirmacao_de_senha_do_docente, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -479,7 +503,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
                                 .addComponent(cbx_sexo_do_docente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(1, 1, 1))
                             .addComponent(cbx_nacionalidade_do_docente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel8Layout.createSequentialGroup()
                     .addGap(373, 373, 373)
@@ -727,7 +751,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
         jComboBox7.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox7.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diurno", "Vespertino", "Noturno" }));
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Manha", "Tarde", "Noite" }));
         jComboBox7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox7ActionPerformed(evt);
@@ -1009,7 +1033,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
         jComboBox2.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Engenharia e Gestao de Tecnologias de Informacao e Telecomunicacoes", "Engenharia Civil" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Matemática", "Física", "Química", "Estatística", "Engenharia Civil", "Engenharia Mecânica", "Engenharia Elétrica", "Engenharia Eletrónica", "Engenharia Informática", "Engenharia de Computação", "Engenharia de Telecomunicações", "Engenharia Química", "Engenharia de Materiais", "Engenharia Industrial", "Engenharia Ambiental", "Arquitetura e Urbanismo", "Ciência da Computação", "Sistemas de Informação", "Inteligência Artificial", "Robótica", "Automação Industrial", "Análise de Dados", "Cibersegurança", "Mecatrônica", "Economia", "Gestão", "Administração de Empresas", "Contabilidade", "Auditoria", "Finanças", "Marketing", "Comércio Internacional", "Empreendedorismo", "Gestão de Recursos Humanos", "Gestão Pública", "Gestão de Projetos", "Gestão Hoteleira", "Turismo", "Logística", "Relações Internacionais", "Ciência Política", "Negócios Digitais", "Gestão Ambiental", "Direito", "Sociologia", "Antropologia", "Administração Pública", "Criminologia", "Serviço Social", "Filosofia", "Psicologia", "Psicopedagogia", "Ciências da Educação", "Pedagogia", "Educação Infantil", "Ensino de Ciências", "Ensino de Matemática", "Ensino de Línguas", "Educação Especial", "Neuropedagogia", "Medicina", "Enfermagem", "Odontologia", "Farmácia", "Nutrição", "Fisioterapia", "Biomedicina", "Ciências Biológicas", "Medicina Veterinária", "Genética", "Biotecnologia", "Educação Física", "Saúde Pública", "Design Gráfico", "Design de Interiores", "Design de Moda", "Artes Plásticas", "Artes Cênicas", "Teatro", "Cinema", "Audiovisual", "Fotografia", "Comunicação Social", "Jornalismo", "Publicidade e Propaganda", "Produção Cultural", "Música", "Dança", "Geografia", "Geologia", "Engenharia Florestal", "Engenharia Agronómica", "Ciências do Ambiente", "Meteorologia", "Oceanografia", "Ecologia", "Agronomia", "Zootecnia", "Engenharia de Software", "Análise e Desenvolvimento de Sistemas", "Ciência de Dados", "Redes de Computadores", "Jogos Digitais", "História", "Letras", "Linguística", "Tradução e Interpretação", "Estudos Literários", "Teologia", "Estudos Culturais", "Arqueologia", "Hotelaria", "Gastronomia", "Eventos", "Lazer e Recreação" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -1051,7 +1075,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
         jComboBox9.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox9.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mocambicana", "Tanzaniana", "Zimbabuiana", "Sul Africana", "Brasileira", "Inglesa", "Americana" }));
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Afegão", "Africano", "Albanês", "Alemão", "Andorrano", "Angolano", "Antiguano", "Argentino", "Armênio", "Arubano", "Australiano", "Austríaco", "Azerbaijano", "Bahamense", "Bahreinita", "Bangladeshiano", "Barbadiano", "Belga", "Belizenho", "Beninense", "Bielorrusso", "Boliviano", "Bósnio", "Botsuano", "Brasileiro", "Britânico", "Bruneano", "Búlgaro", "Burquinense", "Burundiano", "Cabo-verdiano", "Camaronense", "Cambojano", "Canadense", "Catarense", "Cazaquistanês", "Centro-africano", "Chileno", "Chinês", "Cipriota", "Colombiano", "Comorense", "Congolês", "Costarriquenho", "Croata", "Cubano", "Curdo", "Dinamarquês", "Dominicano", "Egípcio", "Emiradense", "Equatoriano", "Eritreu", "Eslovaco", "Esloveno", "Espanhol", "Estadunidense", "Estoniano", "Etíope", "Fijiano", "Filipino", "Finlandês", "Francês", "Gabonês", "Gambiano", "Ganês", "Georgiano", "Grego", "Guatemalteco", "Guianense", "Guineense", "Haitiano", "Hondurenho", "Húngaro", "Iemenita", "Indiano", "Indonésio", "Iraniano", "Iraquiano", "Irlandês", "Islandês", "Israelense", "Italiano", "Jamaicano", "Japonês", "Jordaniano", "Queniano", "Kosovar", "Kuwaitiano", "Laociano", "Letão", "Libanês", "Liberiano", "Líbio", "Liechtensteinense", "Lituano", "Luxemburguês", "Macedônio", "Malaio", "Malauiano", "Maliano", "Maltês", "Marfinense", "Marroquino", "Mauriciano", "Mauritano", "Mexicano", "Moçambicano", "Moldavo", "Monegasco", "Mongol", "Montenegrino", "Birmanês", "Namibiano", "Nauruano", "Nepalês", "Neozelandês", "Nigeriano", "Nigerino", "Norueguês", "Omanense", "Paquistanês", "Palestino", "Panamenho", "Papua", "Paraguaio", "Peruano", "Polonês", "Português", "Porto-riquenho", "Quirguiz", "Romeno", "Ruandês", "Russo", "Salomônico", "Salvadorenho", "Samoano", "Sanmarinense", "São-tomense", "Saudita", "Senegalês", "Sérvio", "Seichelense", "Singapuriano", "Sírio", "Somali", "Sul-africano", "Sudanês", "Sueco", "Suíço", "Surinamês", "Tailandês", "Taiwanês", "Tadjiquistanês", "Tanzaniano", "Tcheco", "Togolês", "Tunisino", "Turco", "Turcomeno", "Ucraniano", "Ugandês", "Uruguaio", "Uzbeque", "Venezuelano", "Vietnamita", "Zambiano", "Zimbabuense" }));
         jComboBox9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox9ActionPerformed(evt);
@@ -1077,7 +1101,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
 
         jComboBox14.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox14.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diurno", "Vespertino", "Noturno" }));
+        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Manha", "Tarde", "Noite" }));
         jComboBox14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox14ActionPerformed(evt);
@@ -1339,11 +1363,11 @@ public class AdministradorFrame extends javax.swing.JFrame {
     }
 
     public JTable getTbl_tabela_do_docente() {
-        return tbl_tabela_do_docente;
+        return tabela_docente;
     }
 
     public void setTbl_tabela_do_docente(JTable tbl_tabela_do_docente) {
-        this.tbl_tabela_do_docente = tbl_tabela_do_docente;
+        this.tabela_docente = tbl_tabela_do_docente;
     }
 
     public JTextField getTxt_bi_do_docente() {
@@ -1455,6 +1479,25 @@ public class AdministradorFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.controller.limpar_campos_do_docente();
     }//GEN-LAST:event_btn_limpar_do_docenteActionPerformed
+
+    private void btn_pesquisa_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisa_do_docenteActionPerformed
+        // TODO add your handling code here:
+        this.controller.procurar_docente();
+    }//GEN-LAST:event_btn_pesquisa_do_docenteActionPerformed
+
+    private void btn_actualizar_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizar_do_docenteActionPerformed
+        // TODO add your handling code here:
+        this.controller.actualizar_docente();
+    }//GEN-LAST:event_btn_actualizar_do_docenteActionPerformed
+
+    private void pwd_senha_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwd_senha_do_docenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pwd_senha_do_docenteActionPerformed
+
+    private void btn_eliminar_do_docenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminar_do_docenteActionPerformed
+        // TODO add your handling code here:
+        this.controller.eliminar_docente();
+    }//GEN-LAST:event_btn_eliminar_do_docenteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1596,7 +1639,7 @@ public class AdministradorFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JPasswordField pwd_confirmacao_de_senha_do_docente;
     private javax.swing.JPasswordField pwd_senha_do_docente;
-    private javax.swing.JTable tbl_tabela_do_docente;
+    private javax.swing.JTable tabela_docente;
     private javax.swing.JTextField txt_bi_do_docente;
     private javax.swing.JTextField txt_codigo_de_pesquisa_do_docente;
     private javax.swing.JTextField txt_data_de_nascimento_do_docente;

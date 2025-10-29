@@ -5,7 +5,8 @@
         <group>
             <file>file:/home/simba/NetBeansProjects/Campus-Digital/src/campus/digital/controller/AdministradorController.java</file>
             <file>file:/home/simba/NetBeansProjects/Campus-Digital/src/campus/digital/controller/LoginController.java</file>
-            <file>file:/home/simba/NetBeansProjects/Campus-Digital/src/campus/digital/controller/UsuariosController.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus-Digital/src/campus/digital/controller/helper/LoginHelper.java</file>
+            <file>file:/home/simba/NetBeansProjects/Campus-Digital/src/campus/digital/controller/helper/AdministradorHelper.java</file>
             <file>file:/home/simba/NetBeansProjects/Campus-Digital/src/campus/digital/model/Aluno.java</file>
             <file>file:/home/simba/NetBeansProjects/Campus-Digital/src/campus/digital/model/VectorUsuarios.java</file>
             <file>file:/home/simba/NetBeansProjects/Campus-Digital/src/campus/digital/model/Funcionario.java</file>

@@ -13,6 +13,7 @@ import java.util.Date;
  */
 public class Docente extends Usuarios{  
     
+    protected String ID;
     protected String email_do_docente;
     protected char[] senha;
     protected char[] senha_repetida;
@@ -20,15 +21,16 @@ public class Docente extends Usuarios{
     protected String nivel_academico;
     protected String horario_de_trabalho;
 
-    public Docente() {} // - Para ser capaz de criar de instanciar sem passar nenhum parrametros
+    static int contador = 0;
     
-
-    public Docente(String nome, String ID, char sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
-        super(nome, ID, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
+    public Docente() {} 
+    
+    public Docente(String nome, String sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
+        super(nome, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
     }
 
-    public Docente(String email_do_docente, char[] senha, char[] senha_repetida, String cadeira, String nivel_academico, String horario_de_trabalho, String nome, String ID, char sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
-        super(nome, ID, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
+    public Docente(String email_do_docente, char[] senha, char[] senha_repetida, String cadeira, String nivel_academico, String horario_de_trabalho, String nome, String ID, String sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
+        super(nome, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
         this.email_do_docente = email_do_docente;
         this.senha = senha;
         this.senha_repetida = senha_repetida;
@@ -37,6 +39,15 @@ public class Docente extends Usuarios{
         this.horario_de_trabalho = horario_de_trabalho;
     }
 
+    public String getID(){
+        return ID;
+    }
+    
+    public void gerarID() {
+        contador++;
+        this.ID = String.format("DOC%03d", contador);
+    }
+    
     public String getEmail_do_docente() {
         return email_do_docente;
     }

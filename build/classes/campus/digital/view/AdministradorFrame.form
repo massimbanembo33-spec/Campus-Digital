@@ -156,6 +156,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_eliminar_do_docenteActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_actualizar_do_docente">
                   <Properties>
@@ -170,6 +173,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Atualizar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_actualizar_do_docenteActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_limpar_do_docente">
                   <Properties>
@@ -215,6 +221,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Pesquisa"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_pesquisa_do_docenteActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txt_codigo_de_pesquisa_do_docente">
                   <Properties>
@@ -264,7 +273,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tbl_tabela_do_docente">
+                <Component class="javax.swing.JTable" name="tabela_docente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="0" red="0" type="rgb"/>
@@ -276,11 +285,11 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
-                        <Column editable="true" title="Nomes" type="java.lang.Object"/>
-                        <Column editable="true" title="ID" type="java.lang.Object"/>
-                        <Column editable="true" title="Senha" type="java.lang.Object"/>
-                        <Column editable="true" title="Curso" type="java.lang.Object"/>
+                      <Table columnCount="4" rowCount="0">
+                        <Column editable="false" title="ID" type="java.lang.Object"/>
+                        <Column editable="false" title="Nome" type="java.lang.Object"/>
+                        <Column editable="false" title="Senha" type="java.lang.Object"/>
+                        <Column editable="false" title="Curso" type="java.lang.Object"/>
                       </Table>
                     </Property>
                   </Properties>
@@ -358,7 +367,7 @@
                                   <Component id="jLabel23" min="-2" pref="163" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="pwd_senha_do_docente" min="-2" pref="281" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel24" min="-2" pref="209" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="pwd_confirmacao_de_senha_do_docente" min="-2" pref="281" max="-2" attributes="0"/>
@@ -390,7 +399,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="47" max="32767" attributes="0"/>
+                          <EmptySpace pref="17" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -543,18 +552,158 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="11">
+                      <StringArray count="151">
                         <StringItem index="0" value="Selecione:"/>
-                        <StringItem index="1" value="Analise Matematica I"/>
-                        <StringItem index="2" value="Analise Matematica II"/>
-                        <StringItem index="3" value="Programacao I"/>
-                        <StringItem index="4" value="Programacao II"/>
-                        <StringItem index="5" value="Algoritmos"/>
-                        <StringItem index="6" value="Metodos de Estudos"/>
-                        <StringItem index="7" value="MIC"/>
-                        <StringItem index="8" value="Estatistica I"/>
-                        <StringItem index="9" value="Estatistica II"/>
-                        <StringItem index="10" value="Economia e Gestao De Empresas"/>
+                        <StringItem index="1" value="Matem&#xe1;tica"/>
+                        <StringItem index="2" value="&#xc1;lgebra"/>
+                        <StringItem index="3" value="C&#xe1;lculo Diferencial e Integral"/>
+                        <StringItem index="4" value="Geometria Anal&#xed;tica"/>
+                        <StringItem index="5" value="Trigonometria"/>
+                        <StringItem index="6" value="Estat&#xed;stica"/>
+                        <StringItem index="7" value="Probabilidade"/>
+                        <StringItem index="8" value="F&#xed;sica Geral"/>
+                        <StringItem index="9" value="F&#xed;sica Aplicada"/>
+                        <StringItem index="10" value="Qu&#xed;mica Geral"/>
+                        <StringItem index="11" value="Qu&#xed;mica Org&#xe2;nica"/>
+                        <StringItem index="12" value="Qu&#xed;mica Inorg&#xe2;nica"/>
+                        <StringItem index="13" value="Termodin&#xe2;mica"/>
+                        <StringItem index="14" value="Mec&#xe2;nica"/>
+                        <StringItem index="15" value="Eletricidade e Magnetismo"/>
+                        <StringItem index="16" value="Desenho T&#xe9;cnico"/>
+                        <StringItem index="17" value="Computa&#xe7;&#xe3;o"/>
+                        <StringItem index="18" value="Programa&#xe7;&#xe3;o"/>
+                        <StringItem index="19" value="L&#xf3;gica de Programa&#xe7;&#xe3;o"/>
+                        <StringItem index="20" value="Algoritmos"/>
+                        <StringItem index="21" value="Estruturas de Dados"/>
+                        <StringItem index="22" value="Banco de Dados"/>
+                        <StringItem index="23" value="Redes de Computadores"/>
+                        <StringItem index="24" value="Sistemas Operativos"/>
+                        <StringItem index="25" value="Intelig&#xea;ncia Artificial"/>
+                        <StringItem index="26" value="Aprendizado de M&#xe1;quina"/>
+                        <StringItem index="27" value="Engenharia de Software"/>
+                        <StringItem index="28" value="An&#xe1;lise de Sistemas"/>
+                        <StringItem index="29" value="Ciberseguran&#xe7;a"/>
+                        <StringItem index="30" value="Arquitetura de Computadores"/>
+                        <StringItem index="31" value="Rob&#xf3;tica"/>
+                        <StringItem index="32" value="Automa&#xe7;&#xe3;o"/>
+                        <StringItem index="33" value="Gest&#xe3;o de Projetos"/>
+                        <StringItem index="34" value="Empreendedorismo"/>
+                        <StringItem index="35" value="Administra&#xe7;&#xe3;o Geral"/>
+                        <StringItem index="36" value="Gest&#xe3;o Financeira"/>
+                        <StringItem index="37" value="Gest&#xe3;o de Recursos Humanos"/>
+                        <StringItem index="38" value="Gest&#xe3;o Estrat&#xe9;gica"/>
+                        <StringItem index="39" value="Contabilidade"/>
+                        <StringItem index="40" value="Auditoria"/>
+                        <StringItem index="41" value="Economia"/>
+                        <StringItem index="42" value="Microeconomia"/>
+                        <StringItem index="43" value="Macroeconomia"/>
+                        <StringItem index="44" value="Finan&#xe7;as P&#xfa;blicas"/>
+                        <StringItem index="45" value="Com&#xe9;rcio Internacional"/>
+                        <StringItem index="46" value="Marketing"/>
+                        <StringItem index="47" value="Publicidade e Comunica&#xe7;&#xe3;o"/>
+                        <StringItem index="48" value="Gest&#xe3;o Ambiental"/>
+                        <StringItem index="49" value="Planeamento Estrat&#xe9;gico"/>
+                        <StringItem index="50" value="Matem&#xe1;tica Financeira"/>
+                        <StringItem index="51" value="Log&#xed;stica"/>
+                        <StringItem index="52" value="Direito Constitucional"/>
+                        <StringItem index="53" value="Direito Civil"/>
+                        <StringItem index="54" value="Direito Penal"/>
+                        <StringItem index="55" value="Direito Administrativo"/>
+                        <StringItem index="56" value="Direito Comercial"/>
+                        <StringItem index="57" value="Direito Internacional"/>
+                        <StringItem index="58" value="Direito do Trabalho"/>
+                        <StringItem index="59" value="Criminologia"/>
+                        <StringItem index="60" value="Ci&#xea;ncia Pol&#xed;tica"/>
+                        <StringItem index="61" value="Rela&#xe7;&#xf5;es Internacionais"/>
+                        <StringItem index="62" value="Sociologia"/>
+                        <StringItem index="63" value="Antropologia"/>
+                        <StringItem index="64" value="Psicologia Geral"/>
+                        <StringItem index="65" value="Psicologia Social"/>
+                        <StringItem index="66" value="Psicologia do Desenvolvimento"/>
+                        <StringItem index="67" value="Psicologia Educacional"/>
+                        <StringItem index="68" value="Filosofia"/>
+                        <StringItem index="69" value="L&#xf3;gica Filos&#xf3;fica"/>
+                        <StringItem index="70" value="&#xc9;tica"/>
+                        <StringItem index="71" value="Hist&#xf3;ria da Filosofia"/>
+                        <StringItem index="72" value="Metodologia Cient&#xed;fica"/>
+                        <StringItem index="73" value="Epistemologia"/>
+                        <StringItem index="74" value="L&#xed;ngua Portuguesa"/>
+                        <StringItem index="75" value="L&#xed;ngua Inglesa"/>
+                        <StringItem index="76" value="Lingu&#xed;stica"/>
+                        <StringItem index="77" value="Literatura"/>
+                        <StringItem index="78" value="Comunica&#xe7;&#xe3;o Oral e Escrita"/>
+                        <StringItem index="79" value="Hist&#xf3;ria"/>
+                        <StringItem index="80" value="Geografia"/>
+                        <StringItem index="81" value="Antropologia Cultural"/>
+                        <StringItem index="82" value="Estudos Africanos"/>
+                        <StringItem index="83" value="Teologia"/>
+                        <StringItem index="84" value="Religi&#xe3;o e Sociedade"/>
+                        <StringItem index="85" value="Educa&#xe7;&#xe3;o e Pedagogia"/>
+                        <StringItem index="86" value="Did&#xe1;tica"/>
+                        <StringItem index="87" value="Metodologia do Ensino"/>
+                        <StringItem index="88" value="Psicopedagogia"/>
+                        <StringItem index="89" value="Avalia&#xe7;&#xe3;o Educacional"/>
+                        <StringItem index="90" value="Planeamento Curricular"/>
+                        <StringItem index="91" value="Educa&#xe7;&#xe3;o Inclusiva"/>
+                        <StringItem index="92" value="Gest&#xe3;o Escolar"/>
+                        <StringItem index="93" value="Biologia Geral"/>
+                        <StringItem index="94" value="Gen&#xe9;tica"/>
+                        <StringItem index="95" value="Ecologia"/>
+                        <StringItem index="96" value="Bot&#xe2;nica"/>
+                        <StringItem index="97" value="Zoologia"/>
+                        <StringItem index="98" value="Fisiologia"/>
+                        <StringItem index="99" value="Microbiologia"/>
+                        <StringItem index="100" value="Bioqu&#xed;mica"/>
+                        <StringItem index="101" value="Anatomia Humana"/>
+                        <StringItem index="102" value="Histologia"/>
+                        <StringItem index="103" value="Farmacologia"/>
+                        <StringItem index="104" value="Sa&#xfa;de P&#xfa;blica"/>
+                        <StringItem index="105" value="Nutri&#xe7;&#xe3;o e Diet&#xe9;tica"/>
+                        <StringItem index="106" value="Fisioterapia Aplicada"/>
+                        <StringItem index="107" value="Medicina Interna"/>
+                        <StringItem index="108" value="Enfermagem Geral"/>
+                        <StringItem index="109" value="Epidemiologia"/>
+                        <StringItem index="110" value="Primeiros Socorros"/>
+                        <StringItem index="111" value="Odontologia Preventiva"/>
+                        <StringItem index="112" value="Educa&#xe7;&#xe3;o F&#xed;sica"/>
+                        <StringItem index="113" value="Treino Desportivo"/>
+                        <StringItem index="114" value="Cinesiologia"/>
+                        <StringItem index="115" value="Design Gr&#xe1;fico"/>
+                        <StringItem index="116" value="Design de Interiores"/>
+                        <StringItem index="117" value="Teoria das Cores"/>
+                        <StringItem index="118" value="Composi&#xe7;&#xe3;o Visual"/>
+                        <StringItem index="119" value="Desenho Art&#xed;stico"/>
+                        <StringItem index="120" value="Fotografia"/>
+                        <StringItem index="121" value="Cinema e Audiovisual"/>
+                        <StringItem index="122" value="Edi&#xe7;&#xe3;o de V&#xed;deo"/>
+                        <StringItem index="123" value="M&#xfa;sica"/>
+                        <StringItem index="124" value="Hist&#xf3;ria da Arte"/>
+                        <StringItem index="125" value="Artes C&#xea;nicas"/>
+                        <StringItem index="126" value="Teatro"/>
+                        <StringItem index="127" value="Produ&#xe7;&#xe3;o Cultural"/>
+                        <StringItem index="128" value="Geologia"/>
+                        <StringItem index="129" value="Ci&#xea;ncias do Solo"/>
+                        <StringItem index="130" value="Meteorologia"/>
+                        <StringItem index="131" value="Oceanografia"/>
+                        <StringItem index="132" value="Agronomia"/>
+                        <StringItem index="133" value="Zootecnia"/>
+                        <StringItem index="134" value="Ci&#xea;ncias do Ambiente"/>
+                        <StringItem index="135" value="Sustentabilidade"/>
+                        <StringItem index="136" value="Engenharia Ambiental"/>
+                        <StringItem index="137" value="Topografia"/>
+                        <StringItem index="138" value="Cartografia"/>
+                        <StringItem index="139" value="Tecnologia de Materiais"/>
+                        <StringItem index="140" value="Ci&#xea;ncia e Tecnologia"/>
+                        <StringItem index="141" value="Inova&#xe7;&#xe3;o e Empreendedorismo"/>
+                        <StringItem index="142" value="Metodologia da Pesquisa"/>
+                        <StringItem index="143" value="Estat&#xed;stica Aplicada"/>
+                        <StringItem index="144" value="&#xc9;tica Profissional"/>
+                        <StringItem index="145" value="Comunica&#xe7;&#xe3;o Empresarial"/>
+                        <StringItem index="146" value="Gest&#xe3;o da Qualidade"/>
+                        <StringItem index="147" value="Planeamento Urbano"/>
+                        <StringItem index="148" value="Arquitetura e Urbanismo"/>
+                        <StringItem index="149" value="Ergonomia"/>
+                        <StringItem index="150" value="Desenvolvimento Pessoal e Profissional"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -681,9 +830,9 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
                         <StringItem index="0" value="Selecione:"/>
-                        <StringItem index="1" value="Diurno"/>
-                        <StringItem index="2" value="Vespertino"/>
-                        <StringItem index="3" value="Noturno"/>
+                        <StringItem index="1" value="Manha"/>
+                        <StringItem index="2" value="Tarde"/>
+                        <StringItem index="3" value="Noite"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -700,6 +849,9 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pwd_senha_do_docenteActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="pwd_confirmacao_de_senha_do_docente">
                   <Properties>
@@ -746,17 +898,176 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="10">
+                      <StringArray count="169">
                         <StringItem index="0" value="Selecione:"/>
-                        <StringItem index="1" value="Mocambicana"/>
-                        <StringItem index="2" value="Tanzaniana"/>
-                        <StringItem index="3" value="Zimbabuiana"/>
-                        <StringItem index="4" value="Sul Africana"/>
-                        <StringItem index="5" value="Brasileira"/>
-                        <StringItem index="6" value="Inglesa"/>
-                        <StringItem index="7" value="Americana"/>
-                        <StringItem index="8" value="Chinesa"/>
-                        <StringItem index="9" value="Japonesa"/>
+                        <StringItem index="1" value="Afeg&#xe3;o"/>
+                        <StringItem index="2" value="Africano"/>
+                        <StringItem index="3" value="Alban&#xea;s"/>
+                        <StringItem index="4" value="Alem&#xe3;o"/>
+                        <StringItem index="5" value="Andorrano"/>
+                        <StringItem index="6" value="Angolano"/>
+                        <StringItem index="7" value="Antiguano"/>
+                        <StringItem index="8" value="Argentino"/>
+                        <StringItem index="9" value="Arm&#xea;nio"/>
+                        <StringItem index="10" value="Arubano"/>
+                        <StringItem index="11" value="Australiano"/>
+                        <StringItem index="12" value="Austr&#xed;aco"/>
+                        <StringItem index="13" value="Azerbaijano"/>
+                        <StringItem index="14" value="Bahamense"/>
+                        <StringItem index="15" value="Bahreinita"/>
+                        <StringItem index="16" value="Bangladeshiano"/>
+                        <StringItem index="17" value="Barbadiano"/>
+                        <StringItem index="18" value="Belga"/>
+                        <StringItem index="19" value="Belizenho"/>
+                        <StringItem index="20" value="Beninense"/>
+                        <StringItem index="21" value="Bielorrusso"/>
+                        <StringItem index="22" value="Boliviano"/>
+                        <StringItem index="23" value="B&#xf3;snio"/>
+                        <StringItem index="24" value="Botsuano"/>
+                        <StringItem index="25" value="Brasileiro"/>
+                        <StringItem index="26" value="Brit&#xe2;nico"/>
+                        <StringItem index="27" value="Bruneano"/>
+                        <StringItem index="28" value="B&#xfa;lgaro"/>
+                        <StringItem index="29" value="Burquinense"/>
+                        <StringItem index="30" value="Burundiano"/>
+                        <StringItem index="31" value="Cabo-verdiano"/>
+                        <StringItem index="32" value="Camaronense"/>
+                        <StringItem index="33" value="Cambojano"/>
+                        <StringItem index="34" value="Canadense"/>
+                        <StringItem index="35" value="Catarense"/>
+                        <StringItem index="36" value="Cazaquistan&#xea;s"/>
+                        <StringItem index="37" value="Centro-africano"/>
+                        <StringItem index="38" value="Chileno"/>
+                        <StringItem index="39" value="Chin&#xea;s"/>
+                        <StringItem index="40" value="Cipriota"/>
+                        <StringItem index="41" value="Colombiano"/>
+                        <StringItem index="42" value="Comorense"/>
+                        <StringItem index="43" value="Congol&#xea;s"/>
+                        <StringItem index="44" value="Costarriquenho"/>
+                        <StringItem index="45" value="Croata"/>
+                        <StringItem index="46" value="Cubano"/>
+                        <StringItem index="47" value="Curdo"/>
+                        <StringItem index="48" value="Dinamarqu&#xea;s"/>
+                        <StringItem index="49" value="Dominicano"/>
+                        <StringItem index="50" value="Eg&#xed;pcio"/>
+                        <StringItem index="51" value="Emiradense"/>
+                        <StringItem index="52" value="Equatoriano"/>
+                        <StringItem index="53" value="Eritreu"/>
+                        <StringItem index="54" value="Eslovaco"/>
+                        <StringItem index="55" value="Esloveno"/>
+                        <StringItem index="56" value="Espanhol"/>
+                        <StringItem index="57" value="Estadunidense"/>
+                        <StringItem index="58" value="Estoniano"/>
+                        <StringItem index="59" value="Et&#xed;ope"/>
+                        <StringItem index="60" value="Fijiano"/>
+                        <StringItem index="61" value="Filipino"/>
+                        <StringItem index="62" value="Finland&#xea;s"/>
+                        <StringItem index="63" value="Franc&#xea;s"/>
+                        <StringItem index="64" value="Gabon&#xea;s"/>
+                        <StringItem index="65" value="Gambiano"/>
+                        <StringItem index="66" value="Gan&#xea;s"/>
+                        <StringItem index="67" value="Georgiano"/>
+                        <StringItem index="68" value="Grego"/>
+                        <StringItem index="69" value="Guatemalteco"/>
+                        <StringItem index="70" value="Guianense"/>
+                        <StringItem index="71" value="Guineense"/>
+                        <StringItem index="72" value="Haitiano"/>
+                        <StringItem index="73" value="Hondurenho"/>
+                        <StringItem index="74" value="H&#xfa;ngaro"/>
+                        <StringItem index="75" value="Iemenita"/>
+                        <StringItem index="76" value="Indiano"/>
+                        <StringItem index="77" value="Indon&#xe9;sio"/>
+                        <StringItem index="78" value="Iraniano"/>
+                        <StringItem index="79" value="Iraquiano"/>
+                        <StringItem index="80" value="Irland&#xea;s"/>
+                        <StringItem index="81" value="Island&#xea;s"/>
+                        <StringItem index="82" value="Israelense"/>
+                        <StringItem index="83" value="Italiano"/>
+                        <StringItem index="84" value="Jamaicano"/>
+                        <StringItem index="85" value="Japon&#xea;s"/>
+                        <StringItem index="86" value="Jordaniano"/>
+                        <StringItem index="87" value="Queniano"/>
+                        <StringItem index="88" value="Kosovar"/>
+                        <StringItem index="89" value="Kuwaitiano"/>
+                        <StringItem index="90" value="Laociano"/>
+                        <StringItem index="91" value="Let&#xe3;o"/>
+                        <StringItem index="92" value="Liban&#xea;s"/>
+                        <StringItem index="93" value="Liberiano"/>
+                        <StringItem index="94" value="L&#xed;bio"/>
+                        <StringItem index="95" value="Liechtensteinense"/>
+                        <StringItem index="96" value="Lituano"/>
+                        <StringItem index="97" value="Luxemburgu&#xea;s"/>
+                        <StringItem index="98" value="Maced&#xf4;nio"/>
+                        <StringItem index="99" value="Malaio"/>
+                        <StringItem index="100" value="Malauiano"/>
+                        <StringItem index="101" value="Maliano"/>
+                        <StringItem index="102" value="Malt&#xea;s"/>
+                        <StringItem index="103" value="Marfinense"/>
+                        <StringItem index="104" value="Marroquino"/>
+                        <StringItem index="105" value="Mauriciano"/>
+                        <StringItem index="106" value="Mauritano"/>
+                        <StringItem index="107" value="Mexicano"/>
+                        <StringItem index="108" value="Mo&#xe7;ambicano"/>
+                        <StringItem index="109" value="Moldavo"/>
+                        <StringItem index="110" value="Monegasco"/>
+                        <StringItem index="111" value="Mongol"/>
+                        <StringItem index="112" value="Montenegrino"/>
+                        <StringItem index="113" value="Birman&#xea;s"/>
+                        <StringItem index="114" value="Namibiano"/>
+                        <StringItem index="115" value="Nauruano"/>
+                        <StringItem index="116" value="Nepal&#xea;s"/>
+                        <StringItem index="117" value="Neozeland&#xea;s"/>
+                        <StringItem index="118" value="Nigeriano"/>
+                        <StringItem index="119" value="Nigerino"/>
+                        <StringItem index="120" value="Noruegu&#xea;s"/>
+                        <StringItem index="121" value="Omanense"/>
+                        <StringItem index="122" value="Paquistan&#xea;s"/>
+                        <StringItem index="123" value="Palestino"/>
+                        <StringItem index="124" value="Panamenho"/>
+                        <StringItem index="125" value="Papua"/>
+                        <StringItem index="126" value="Paraguaio"/>
+                        <StringItem index="127" value="Peruano"/>
+                        <StringItem index="128" value="Polon&#xea;s"/>
+                        <StringItem index="129" value="Portugu&#xea;s"/>
+                        <StringItem index="130" value="Porto-riquenho"/>
+                        <StringItem index="131" value="Quirguiz"/>
+                        <StringItem index="132" value="Romeno"/>
+                        <StringItem index="133" value="Ruand&#xea;s"/>
+                        <StringItem index="134" value="Russo"/>
+                        <StringItem index="135" value="Salom&#xf4;nico"/>
+                        <StringItem index="136" value="Salvadorenho"/>
+                        <StringItem index="137" value="Samoano"/>
+                        <StringItem index="138" value="Sanmarinense"/>
+                        <StringItem index="139" value="S&#xe3;o-tomense"/>
+                        <StringItem index="140" value="Saudita"/>
+                        <StringItem index="141" value="Senegal&#xea;s"/>
+                        <StringItem index="142" value="S&#xe9;rvio"/>
+                        <StringItem index="143" value="Seichelense"/>
+                        <StringItem index="144" value="Singapuriano"/>
+                        <StringItem index="145" value="S&#xed;rio"/>
+                        <StringItem index="146" value="Somali"/>
+                        <StringItem index="147" value="Sul-africano"/>
+                        <StringItem index="148" value="Sudan&#xea;s"/>
+                        <StringItem index="149" value="Sueco"/>
+                        <StringItem index="150" value="Su&#xed;&#xe7;o"/>
+                        <StringItem index="151" value="Surinam&#xea;s"/>
+                        <StringItem index="152" value="Tailand&#xea;s"/>
+                        <StringItem index="153" value="Taiwan&#xea;s"/>
+                        <StringItem index="154" value="Tadjiquistan&#xea;s"/>
+                        <StringItem index="155" value="Tanzaniano"/>
+                        <StringItem index="156" value="Tcheco"/>
+                        <StringItem index="157" value="Togol&#xea;s"/>
+                        <StringItem index="158" value="Tunisino"/>
+                        <StringItem index="159" value="Turco"/>
+                        <StringItem index="160" value="Turcomeno"/>
+                        <StringItem index="161" value="Ucraniano"/>
+                        <StringItem index="162" value="Ugand&#xea;s"/>
+                        <StringItem index="163" value="Uruguaio"/>
+                        <StringItem index="164" value="Uzbeque"/>
+                        <StringItem index="165" value="Venezuelano"/>
+                        <StringItem index="166" value="Vietnamita"/>
+                        <StringItem index="167" value="Zambiano"/>
+                        <StringItem index="168" value="Zimbabuense"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1371,10 +1682,11 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value="Diurno"/>
-                        <StringItem index="1" value="Vespertino"/>
-                        <StringItem index="2" value="Noturno"/>
+                      <StringArray count="4">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="Manha"/>
+                        <StringItem index="2" value="Tarde"/>
+                        <StringItem index="3" value="Noite"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -2001,9 +2313,123 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="2">
-                        <StringItem index="0" value="Engenharia e Gestao de Tecnologias de Informacao e Telecomunicacoes"/>
-                        <StringItem index="1" value="Engenharia Civil"/>
+                      <StringArray count="116">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="Matem&#xe1;tica"/>
+                        <StringItem index="2" value="F&#xed;sica"/>
+                        <StringItem index="3" value="Qu&#xed;mica"/>
+                        <StringItem index="4" value="Estat&#xed;stica"/>
+                        <StringItem index="5" value="Engenharia Civil"/>
+                        <StringItem index="6" value="Engenharia Mec&#xe2;nica"/>
+                        <StringItem index="7" value="Engenharia El&#xe9;trica"/>
+                        <StringItem index="8" value="Engenharia Eletr&#xf3;nica"/>
+                        <StringItem index="9" value="Engenharia Inform&#xe1;tica"/>
+                        <StringItem index="10" value="Engenharia de Computa&#xe7;&#xe3;o"/>
+                        <StringItem index="11" value="Engenharia de Telecomunica&#xe7;&#xf5;es"/>
+                        <StringItem index="12" value="Engenharia Qu&#xed;mica"/>
+                        <StringItem index="13" value="Engenharia de Materiais"/>
+                        <StringItem index="14" value="Engenharia Industrial"/>
+                        <StringItem index="15" value="Engenharia Ambiental"/>
+                        <StringItem index="16" value="Arquitetura e Urbanismo"/>
+                        <StringItem index="17" value="Ci&#xea;ncia da Computa&#xe7;&#xe3;o"/>
+                        <StringItem index="18" value="Sistemas de Informa&#xe7;&#xe3;o"/>
+                        <StringItem index="19" value="Intelig&#xea;ncia Artificial"/>
+                        <StringItem index="20" value="Rob&#xf3;tica"/>
+                        <StringItem index="21" value="Automa&#xe7;&#xe3;o Industrial"/>
+                        <StringItem index="22" value="An&#xe1;lise de Dados"/>
+                        <StringItem index="23" value="Ciberseguran&#xe7;a"/>
+                        <StringItem index="24" value="Mecatr&#xf4;nica"/>
+                        <StringItem index="25" value="Economia"/>
+                        <StringItem index="26" value="Gest&#xe3;o"/>
+                        <StringItem index="27" value="Administra&#xe7;&#xe3;o de Empresas"/>
+                        <StringItem index="28" value="Contabilidade"/>
+                        <StringItem index="29" value="Auditoria"/>
+                        <StringItem index="30" value="Finan&#xe7;as"/>
+                        <StringItem index="31" value="Marketing"/>
+                        <StringItem index="32" value="Com&#xe9;rcio Internacional"/>
+                        <StringItem index="33" value="Empreendedorismo"/>
+                        <StringItem index="34" value="Gest&#xe3;o de Recursos Humanos"/>
+                        <StringItem index="35" value="Gest&#xe3;o P&#xfa;blica"/>
+                        <StringItem index="36" value="Gest&#xe3;o de Projetos"/>
+                        <StringItem index="37" value="Gest&#xe3;o Hoteleira"/>
+                        <StringItem index="38" value="Turismo"/>
+                        <StringItem index="39" value="Log&#xed;stica"/>
+                        <StringItem index="40" value="Rela&#xe7;&#xf5;es Internacionais"/>
+                        <StringItem index="41" value="Ci&#xea;ncia Pol&#xed;tica"/>
+                        <StringItem index="42" value="Neg&#xf3;cios Digitais"/>
+                        <StringItem index="43" value="Gest&#xe3;o Ambiental"/>
+                        <StringItem index="44" value="Direito"/>
+                        <StringItem index="45" value="Sociologia"/>
+                        <StringItem index="46" value="Antropologia"/>
+                        <StringItem index="47" value="Administra&#xe7;&#xe3;o P&#xfa;blica"/>
+                        <StringItem index="48" value="Criminologia"/>
+                        <StringItem index="49" value="Servi&#xe7;o Social"/>
+                        <StringItem index="50" value="Filosofia"/>
+                        <StringItem index="51" value="Psicologia"/>
+                        <StringItem index="52" value="Psicopedagogia"/>
+                        <StringItem index="53" value="Ci&#xea;ncias da Educa&#xe7;&#xe3;o"/>
+                        <StringItem index="54" value="Pedagogia"/>
+                        <StringItem index="55" value="Educa&#xe7;&#xe3;o Infantil"/>
+                        <StringItem index="56" value="Ensino de Ci&#xea;ncias"/>
+                        <StringItem index="57" value="Ensino de Matem&#xe1;tica"/>
+                        <StringItem index="58" value="Ensino de L&#xed;nguas"/>
+                        <StringItem index="59" value="Educa&#xe7;&#xe3;o Especial"/>
+                        <StringItem index="60" value="Neuropedagogia"/>
+                        <StringItem index="61" value="Medicina"/>
+                        <StringItem index="62" value="Enfermagem"/>
+                        <StringItem index="63" value="Odontologia"/>
+                        <StringItem index="64" value="Farm&#xe1;cia"/>
+                        <StringItem index="65" value="Nutri&#xe7;&#xe3;o"/>
+                        <StringItem index="66" value="Fisioterapia"/>
+                        <StringItem index="67" value="Biomedicina"/>
+                        <StringItem index="68" value="Ci&#xea;ncias Biol&#xf3;gicas"/>
+                        <StringItem index="69" value="Medicina Veterin&#xe1;ria"/>
+                        <StringItem index="70" value="Gen&#xe9;tica"/>
+                        <StringItem index="71" value="Biotecnologia"/>
+                        <StringItem index="72" value="Educa&#xe7;&#xe3;o F&#xed;sica"/>
+                        <StringItem index="73" value="Sa&#xfa;de P&#xfa;blica"/>
+                        <StringItem index="74" value="Design Gr&#xe1;fico"/>
+                        <StringItem index="75" value="Design de Interiores"/>
+                        <StringItem index="76" value="Design de Moda"/>
+                        <StringItem index="77" value="Artes Pl&#xe1;sticas"/>
+                        <StringItem index="78" value="Artes C&#xea;nicas"/>
+                        <StringItem index="79" value="Teatro"/>
+                        <StringItem index="80" value="Cinema"/>
+                        <StringItem index="81" value="Audiovisual"/>
+                        <StringItem index="82" value="Fotografia"/>
+                        <StringItem index="83" value="Comunica&#xe7;&#xe3;o Social"/>
+                        <StringItem index="84" value="Jornalismo"/>
+                        <StringItem index="85" value="Publicidade e Propaganda"/>
+                        <StringItem index="86" value="Produ&#xe7;&#xe3;o Cultural"/>
+                        <StringItem index="87" value="M&#xfa;sica"/>
+                        <StringItem index="88" value="Dan&#xe7;a"/>
+                        <StringItem index="89" value="Geografia"/>
+                        <StringItem index="90" value="Geologia"/>
+                        <StringItem index="91" value="Engenharia Florestal"/>
+                        <StringItem index="92" value="Engenharia Agron&#xf3;mica"/>
+                        <StringItem index="93" value="Ci&#xea;ncias do Ambiente"/>
+                        <StringItem index="94" value="Meteorologia"/>
+                        <StringItem index="95" value="Oceanografia"/>
+                        <StringItem index="96" value="Ecologia"/>
+                        <StringItem index="97" value="Agronomia"/>
+                        <StringItem index="98" value="Zootecnia"/>
+                        <StringItem index="99" value="Engenharia de Software"/>
+                        <StringItem index="100" value="An&#xe1;lise e Desenvolvimento de Sistemas"/>
+                        <StringItem index="101" value="Ci&#xea;ncia de Dados"/>
+                        <StringItem index="102" value="Redes de Computadores"/>
+                        <StringItem index="103" value="Jogos Digitais"/>
+                        <StringItem index="104" value="Hist&#xf3;ria"/>
+                        <StringItem index="105" value="Letras"/>
+                        <StringItem index="106" value="Lingu&#xed;stica"/>
+                        <StringItem index="107" value="Tradu&#xe7;&#xe3;o e Interpreta&#xe7;&#xe3;o"/>
+                        <StringItem index="108" value="Estudos Liter&#xe1;rios"/>
+                        <StringItem index="109" value="Teologia"/>
+                        <StringItem index="110" value="Estudos Culturais"/>
+                        <StringItem index="111" value="Arqueologia"/>
+                        <StringItem index="112" value="Hotelaria"/>
+                        <StringItem index="113" value="Gastronomia"/>
+                        <StringItem index="114" value="Eventos"/>
+                        <StringItem index="115" value="Lazer e Recrea&#xe7;&#xe3;o"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -2109,14 +2535,176 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="7">
-                        <StringItem index="0" value="Mocambicana"/>
-                        <StringItem index="1" value="Tanzaniana"/>
-                        <StringItem index="2" value="Zimbabuiana"/>
-                        <StringItem index="3" value="Sul Africana"/>
-                        <StringItem index="4" value="Brasileira"/>
-                        <StringItem index="5" value="Inglesa"/>
-                        <StringItem index="6" value="Americana"/>
+                      <StringArray count="169">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="Afeg&#xe3;o"/>
+                        <StringItem index="2" value="Africano"/>
+                        <StringItem index="3" value="Alban&#xea;s"/>
+                        <StringItem index="4" value="Alem&#xe3;o"/>
+                        <StringItem index="5" value="Andorrano"/>
+                        <StringItem index="6" value="Angolano"/>
+                        <StringItem index="7" value="Antiguano"/>
+                        <StringItem index="8" value="Argentino"/>
+                        <StringItem index="9" value="Arm&#xea;nio"/>
+                        <StringItem index="10" value="Arubano"/>
+                        <StringItem index="11" value="Australiano"/>
+                        <StringItem index="12" value="Austr&#xed;aco"/>
+                        <StringItem index="13" value="Azerbaijano"/>
+                        <StringItem index="14" value="Bahamense"/>
+                        <StringItem index="15" value="Bahreinita"/>
+                        <StringItem index="16" value="Bangladeshiano"/>
+                        <StringItem index="17" value="Barbadiano"/>
+                        <StringItem index="18" value="Belga"/>
+                        <StringItem index="19" value="Belizenho"/>
+                        <StringItem index="20" value="Beninense"/>
+                        <StringItem index="21" value="Bielorrusso"/>
+                        <StringItem index="22" value="Boliviano"/>
+                        <StringItem index="23" value="B&#xf3;snio"/>
+                        <StringItem index="24" value="Botsuano"/>
+                        <StringItem index="25" value="Brasileiro"/>
+                        <StringItem index="26" value="Brit&#xe2;nico"/>
+                        <StringItem index="27" value="Bruneano"/>
+                        <StringItem index="28" value="B&#xfa;lgaro"/>
+                        <StringItem index="29" value="Burquinense"/>
+                        <StringItem index="30" value="Burundiano"/>
+                        <StringItem index="31" value="Cabo-verdiano"/>
+                        <StringItem index="32" value="Camaronense"/>
+                        <StringItem index="33" value="Cambojano"/>
+                        <StringItem index="34" value="Canadense"/>
+                        <StringItem index="35" value="Catarense"/>
+                        <StringItem index="36" value="Cazaquistan&#xea;s"/>
+                        <StringItem index="37" value="Centro-africano"/>
+                        <StringItem index="38" value="Chileno"/>
+                        <StringItem index="39" value="Chin&#xea;s"/>
+                        <StringItem index="40" value="Cipriota"/>
+                        <StringItem index="41" value="Colombiano"/>
+                        <StringItem index="42" value="Comorense"/>
+                        <StringItem index="43" value="Congol&#xea;s"/>
+                        <StringItem index="44" value="Costarriquenho"/>
+                        <StringItem index="45" value="Croata"/>
+                        <StringItem index="46" value="Cubano"/>
+                        <StringItem index="47" value="Curdo"/>
+                        <StringItem index="48" value="Dinamarqu&#xea;s"/>
+                        <StringItem index="49" value="Dominicano"/>
+                        <StringItem index="50" value="Eg&#xed;pcio"/>
+                        <StringItem index="51" value="Emiradense"/>
+                        <StringItem index="52" value="Equatoriano"/>
+                        <StringItem index="53" value="Eritreu"/>
+                        <StringItem index="54" value="Eslovaco"/>
+                        <StringItem index="55" value="Esloveno"/>
+                        <StringItem index="56" value="Espanhol"/>
+                        <StringItem index="57" value="Estadunidense"/>
+                        <StringItem index="58" value="Estoniano"/>
+                        <StringItem index="59" value="Et&#xed;ope"/>
+                        <StringItem index="60" value="Fijiano"/>
+                        <StringItem index="61" value="Filipino"/>
+                        <StringItem index="62" value="Finland&#xea;s"/>
+                        <StringItem index="63" value="Franc&#xea;s"/>
+                        <StringItem index="64" value="Gabon&#xea;s"/>
+                        <StringItem index="65" value="Gambiano"/>
+                        <StringItem index="66" value="Gan&#xea;s"/>
+                        <StringItem index="67" value="Georgiano"/>
+                        <StringItem index="68" value="Grego"/>
+                        <StringItem index="69" value="Guatemalteco"/>
+                        <StringItem index="70" value="Guianense"/>
+                        <StringItem index="71" value="Guineense"/>
+                        <StringItem index="72" value="Haitiano"/>
+                        <StringItem index="73" value="Hondurenho"/>
+                        <StringItem index="74" value="H&#xfa;ngaro"/>
+                        <StringItem index="75" value="Iemenita"/>
+                        <StringItem index="76" value="Indiano"/>
+                        <StringItem index="77" value="Indon&#xe9;sio"/>
+                        <StringItem index="78" value="Iraniano"/>
+                        <StringItem index="79" value="Iraquiano"/>
+                        <StringItem index="80" value="Irland&#xea;s"/>
+                        <StringItem index="81" value="Island&#xea;s"/>
+                        <StringItem index="82" value="Israelense"/>
+                        <StringItem index="83" value="Italiano"/>
+                        <StringItem index="84" value="Jamaicano"/>
+                        <StringItem index="85" value="Japon&#xea;s"/>
+                        <StringItem index="86" value="Jordaniano"/>
+                        <StringItem index="87" value="Queniano"/>
+                        <StringItem index="88" value="Kosovar"/>
+                        <StringItem index="89" value="Kuwaitiano"/>
+                        <StringItem index="90" value="Laociano"/>
+                        <StringItem index="91" value="Let&#xe3;o"/>
+                        <StringItem index="92" value="Liban&#xea;s"/>
+                        <StringItem index="93" value="Liberiano"/>
+                        <StringItem index="94" value="L&#xed;bio"/>
+                        <StringItem index="95" value="Liechtensteinense"/>
+                        <StringItem index="96" value="Lituano"/>
+                        <StringItem index="97" value="Luxemburgu&#xea;s"/>
+                        <StringItem index="98" value="Maced&#xf4;nio"/>
+                        <StringItem index="99" value="Malaio"/>
+                        <StringItem index="100" value="Malauiano"/>
+                        <StringItem index="101" value="Maliano"/>
+                        <StringItem index="102" value="Malt&#xea;s"/>
+                        <StringItem index="103" value="Marfinense"/>
+                        <StringItem index="104" value="Marroquino"/>
+                        <StringItem index="105" value="Mauriciano"/>
+                        <StringItem index="106" value="Mauritano"/>
+                        <StringItem index="107" value="Mexicano"/>
+                        <StringItem index="108" value="Mo&#xe7;ambicano"/>
+                        <StringItem index="109" value="Moldavo"/>
+                        <StringItem index="110" value="Monegasco"/>
+                        <StringItem index="111" value="Mongol"/>
+                        <StringItem index="112" value="Montenegrino"/>
+                        <StringItem index="113" value="Birman&#xea;s"/>
+                        <StringItem index="114" value="Namibiano"/>
+                        <StringItem index="115" value="Nauruano"/>
+                        <StringItem index="116" value="Nepal&#xea;s"/>
+                        <StringItem index="117" value="Neozeland&#xea;s"/>
+                        <StringItem index="118" value="Nigeriano"/>
+                        <StringItem index="119" value="Nigerino"/>
+                        <StringItem index="120" value="Noruegu&#xea;s"/>
+                        <StringItem index="121" value="Omanense"/>
+                        <StringItem index="122" value="Paquistan&#xea;s"/>
+                        <StringItem index="123" value="Palestino"/>
+                        <StringItem index="124" value="Panamenho"/>
+                        <StringItem index="125" value="Papua"/>
+                        <StringItem index="126" value="Paraguaio"/>
+                        <StringItem index="127" value="Peruano"/>
+                        <StringItem index="128" value="Polon&#xea;s"/>
+                        <StringItem index="129" value="Portugu&#xea;s"/>
+                        <StringItem index="130" value="Porto-riquenho"/>
+                        <StringItem index="131" value="Quirguiz"/>
+                        <StringItem index="132" value="Romeno"/>
+                        <StringItem index="133" value="Ruand&#xea;s"/>
+                        <StringItem index="134" value="Russo"/>
+                        <StringItem index="135" value="Salom&#xf4;nico"/>
+                        <StringItem index="136" value="Salvadorenho"/>
+                        <StringItem index="137" value="Samoano"/>
+                        <StringItem index="138" value="Sanmarinense"/>
+                        <StringItem index="139" value="S&#xe3;o-tomense"/>
+                        <StringItem index="140" value="Saudita"/>
+                        <StringItem index="141" value="Senegal&#xea;s"/>
+                        <StringItem index="142" value="S&#xe9;rvio"/>
+                        <StringItem index="143" value="Seichelense"/>
+                        <StringItem index="144" value="Singapuriano"/>
+                        <StringItem index="145" value="S&#xed;rio"/>
+                        <StringItem index="146" value="Somali"/>
+                        <StringItem index="147" value="Sul-africano"/>
+                        <StringItem index="148" value="Sudan&#xea;s"/>
+                        <StringItem index="149" value="Sueco"/>
+                        <StringItem index="150" value="Su&#xed;&#xe7;o"/>
+                        <StringItem index="151" value="Surinam&#xea;s"/>
+                        <StringItem index="152" value="Tailand&#xea;s"/>
+                        <StringItem index="153" value="Taiwan&#xea;s"/>
+                        <StringItem index="154" value="Tadjiquistan&#xea;s"/>
+                        <StringItem index="155" value="Tanzaniano"/>
+                        <StringItem index="156" value="Tcheco"/>
+                        <StringItem index="157" value="Togol&#xea;s"/>
+                        <StringItem index="158" value="Tunisino"/>
+                        <StringItem index="159" value="Turco"/>
+                        <StringItem index="160" value="Turcomeno"/>
+                        <StringItem index="161" value="Ucraniano"/>
+                        <StringItem index="162" value="Ugand&#xea;s"/>
+                        <StringItem index="163" value="Uruguaio"/>
+                        <StringItem index="164" value="Uzbeque"/>
+                        <StringItem index="165" value="Venezuelano"/>
+                        <StringItem index="166" value="Vietnamita"/>
+                        <StringItem index="167" value="Zambiano"/>
+                        <StringItem index="168" value="Zimbabuense"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -2184,10 +2772,11 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value="Diurno"/>
-                        <StringItem index="1" value="Vespertino"/>
-                        <StringItem index="2" value="Noturno"/>
+                      <StringArray count="4">
+                        <StringItem index="0" value="Selecione:"/>
+                        <StringItem index="1" value="Manha"/>
+                        <StringItem index="2" value="Tarde"/>
+                        <StringItem index="3" value="Noite"/>
                       </StringArray>
                     </Property>
                   </Properties>

@@ -14,8 +14,7 @@ import java.time.LocalDate;
 abstract public class Usuarios {
     
     protected String nome;
-    protected String ID;
-    protected char sexo;
+    protected String sexo;
     protected String numero_de_BI;
     protected String nacionalidade;
     protected LocalDate data_de_nascimento;
@@ -24,17 +23,15 @@ abstract public class Usuarios {
     public Usuarios(){} //- Para ser capaz de instanciar sem passar parrametros
 
     // Isso para ser capaz de criar um usuario com quase todos atributos (funcionarios)
-    public Usuarios(String nome, String ID, char sexo, LocalDate data_de_nascimento, int numero_de_celular) {
+    public Usuarios(String nome, String sexo, LocalDate data_de_nascimento, int numero_de_celular) {
         this.nome = nome;
-        this.ID = ID;
         this.sexo = sexo;
         this.data_de_nascimento = data_de_nascimento;
         this.numero_de_celular = numero_de_celular;
     }
     // Isso para ser capaz de criar um usuario com todos atributos (alunos, docentes)
-    public Usuarios(String nome, String ID, char sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
+    public Usuarios(String nome, String sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
         this.nome = nome;
-        this.ID = ID;
         this.sexo = sexo;
         this.numero_de_BI = numero_de_BI;
         this.nacionalidade = nacionalidade;
@@ -50,19 +47,11 @@ abstract public class Usuarios {
         this.nome = nome;
     }
 
-    public String getID() {
-        return ID;
-    }
-    
-    public void setID(String ID){
-        this.ID = ID;
-    }
-
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
