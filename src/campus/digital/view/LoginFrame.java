@@ -38,8 +38,8 @@ public class LoginFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         btnentrar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtnome = new javax.swing.JTextField();
+        pwdsenha = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -60,35 +60,35 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         getContentPane().add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 820, 220, 70));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Nimbus Sans", 0, 24)); // NOI18N
-        jTextField1.setCaretColor(new java.awt.Color(0, 0, 0));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtnome.setBackground(new java.awt.Color(255, 255, 255));
+        txtnome.setFont(new java.awt.Font("Nimbus Sans", 0, 24)); // NOI18N
+        txtnome.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtnome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtnomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 500, 490, 80));
+        getContentPane().add(txtnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 500, 490, 80));
 
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-        jPasswordField1.setCaretColor(new java.awt.Color(0, 0, 0));
-        jPasswordField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        pwdsenha.setBackground(new java.awt.Color(255, 255, 255));
+        pwdsenha.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        pwdsenha.setCaretColor(new java.awt.Color(0, 0, 0));
+        pwdsenha.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        pwdsenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                pwdsenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 650, 490, 80));
+        getContentPane().add(pwdsenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 650, 490, 80));
 
         jLabel3.setFont(new java.awt.Font("Bitstream Charter", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Esqueci senha");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 930, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 930, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Bitstream Charter", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nome do Usuario / Email");
+        jLabel1.setText("Nome do Usuario / Codigo");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Bitstream Charter", 0, 24)); // NOI18N
@@ -122,13 +122,13 @@ public class LoginFrame extends javax.swing.JFrame {
         this.controller.mensagem_login();
     }//GEN-LAST:event_btnentrarActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtnomeActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void pwdsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdsenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_pwdsenhaActionPerformed
 
     private void btnsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsairActionPerformed
         // TODO add your handling code here:
@@ -168,8 +168,8 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField pwdsenha;
+    private javax.swing.JTextField txtnome;
     // End of variables declaration//GEN-END:variables
 
     

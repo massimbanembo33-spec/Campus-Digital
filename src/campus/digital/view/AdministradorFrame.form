@@ -2313,123 +2313,87 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="116">
-                        <StringItem index="0" value="Selecione:"/>
-                        <StringItem index="1" value="Matem&#xe1;tica"/>
-                        <StringItem index="2" value="F&#xed;sica"/>
-                        <StringItem index="3" value="Qu&#xed;mica"/>
-                        <StringItem index="4" value="Estat&#xed;stica"/>
-                        <StringItem index="5" value="Engenharia Civil"/>
-                        <StringItem index="6" value="Engenharia Mec&#xe2;nica"/>
-                        <StringItem index="7" value="Engenharia El&#xe9;trica"/>
-                        <StringItem index="8" value="Engenharia Eletr&#xf3;nica"/>
-                        <StringItem index="9" value="Engenharia Inform&#xe1;tica"/>
-                        <StringItem index="10" value="Engenharia de Computa&#xe7;&#xe3;o"/>
-                        <StringItem index="11" value="Engenharia de Telecomunica&#xe7;&#xf5;es"/>
-                        <StringItem index="12" value="Engenharia Qu&#xed;mica"/>
-                        <StringItem index="13" value="Engenharia de Materiais"/>
-                        <StringItem index="14" value="Engenharia Industrial"/>
-                        <StringItem index="15" value="Engenharia Ambiental"/>
-                        <StringItem index="16" value="Arquitetura e Urbanismo"/>
-                        <StringItem index="17" value="Ci&#xea;ncia da Computa&#xe7;&#xe3;o"/>
-                        <StringItem index="18" value="Sistemas de Informa&#xe7;&#xe3;o"/>
-                        <StringItem index="19" value="Intelig&#xea;ncia Artificial"/>
-                        <StringItem index="20" value="Rob&#xf3;tica"/>
-                        <StringItem index="21" value="Automa&#xe7;&#xe3;o Industrial"/>
-                        <StringItem index="22" value="An&#xe1;lise de Dados"/>
-                        <StringItem index="23" value="Ciberseguran&#xe7;a"/>
-                        <StringItem index="24" value="Mecatr&#xf4;nica"/>
-                        <StringItem index="25" value="Economia"/>
-                        <StringItem index="26" value="Gest&#xe3;o"/>
-                        <StringItem index="27" value="Administra&#xe7;&#xe3;o de Empresas"/>
-                        <StringItem index="28" value="Contabilidade"/>
-                        <StringItem index="29" value="Auditoria"/>
-                        <StringItem index="30" value="Finan&#xe7;as"/>
-                        <StringItem index="31" value="Marketing"/>
-                        <StringItem index="32" value="Com&#xe9;rcio Internacional"/>
-                        <StringItem index="33" value="Empreendedorismo"/>
-                        <StringItem index="34" value="Gest&#xe3;o de Recursos Humanos"/>
-                        <StringItem index="35" value="Gest&#xe3;o P&#xfa;blica"/>
-                        <StringItem index="36" value="Gest&#xe3;o de Projetos"/>
-                        <StringItem index="37" value="Gest&#xe3;o Hoteleira"/>
-                        <StringItem index="38" value="Turismo"/>
-                        <StringItem index="39" value="Log&#xed;stica"/>
-                        <StringItem index="40" value="Rela&#xe7;&#xf5;es Internacionais"/>
-                        <StringItem index="41" value="Ci&#xea;ncia Pol&#xed;tica"/>
-                        <StringItem index="42" value="Neg&#xf3;cios Digitais"/>
-                        <StringItem index="43" value="Gest&#xe3;o Ambiental"/>
-                        <StringItem index="44" value="Direito"/>
-                        <StringItem index="45" value="Sociologia"/>
-                        <StringItem index="46" value="Antropologia"/>
-                        <StringItem index="47" value="Administra&#xe7;&#xe3;o P&#xfa;blica"/>
-                        <StringItem index="48" value="Criminologia"/>
-                        <StringItem index="49" value="Servi&#xe7;o Social"/>
-                        <StringItem index="50" value="Filosofia"/>
-                        <StringItem index="51" value="Psicologia"/>
-                        <StringItem index="52" value="Psicopedagogia"/>
-                        <StringItem index="53" value="Ci&#xea;ncias da Educa&#xe7;&#xe3;o"/>
-                        <StringItem index="54" value="Pedagogia"/>
-                        <StringItem index="55" value="Educa&#xe7;&#xe3;o Infantil"/>
-                        <StringItem index="56" value="Ensino de Ci&#xea;ncias"/>
-                        <StringItem index="57" value="Ensino de Matem&#xe1;tica"/>
-                        <StringItem index="58" value="Ensino de L&#xed;nguas"/>
-                        <StringItem index="59" value="Educa&#xe7;&#xe3;o Especial"/>
-                        <StringItem index="60" value="Neuropedagogia"/>
-                        <StringItem index="61" value="Medicina"/>
-                        <StringItem index="62" value="Enfermagem"/>
-                        <StringItem index="63" value="Odontologia"/>
-                        <StringItem index="64" value="Farm&#xe1;cia"/>
-                        <StringItem index="65" value="Nutri&#xe7;&#xe3;o"/>
-                        <StringItem index="66" value="Fisioterapia"/>
-                        <StringItem index="67" value="Biomedicina"/>
-                        <StringItem index="68" value="Ci&#xea;ncias Biol&#xf3;gicas"/>
-                        <StringItem index="69" value="Medicina Veterin&#xe1;ria"/>
-                        <StringItem index="70" value="Gen&#xe9;tica"/>
-                        <StringItem index="71" value="Biotecnologia"/>
-                        <StringItem index="72" value="Educa&#xe7;&#xe3;o F&#xed;sica"/>
-                        <StringItem index="73" value="Sa&#xfa;de P&#xfa;blica"/>
-                        <StringItem index="74" value="Design Gr&#xe1;fico"/>
-                        <StringItem index="75" value="Design de Interiores"/>
-                        <StringItem index="76" value="Design de Moda"/>
-                        <StringItem index="77" value="Artes Pl&#xe1;sticas"/>
-                        <StringItem index="78" value="Artes C&#xea;nicas"/>
-                        <StringItem index="79" value="Teatro"/>
-                        <StringItem index="80" value="Cinema"/>
-                        <StringItem index="81" value="Audiovisual"/>
-                        <StringItem index="82" value="Fotografia"/>
-                        <StringItem index="83" value="Comunica&#xe7;&#xe3;o Social"/>
-                        <StringItem index="84" value="Jornalismo"/>
-                        <StringItem index="85" value="Publicidade e Propaganda"/>
-                        <StringItem index="86" value="Produ&#xe7;&#xe3;o Cultural"/>
-                        <StringItem index="87" value="M&#xfa;sica"/>
-                        <StringItem index="88" value="Dan&#xe7;a"/>
-                        <StringItem index="89" value="Geografia"/>
-                        <StringItem index="90" value="Geologia"/>
-                        <StringItem index="91" value="Engenharia Florestal"/>
-                        <StringItem index="92" value="Engenharia Agron&#xf3;mica"/>
-                        <StringItem index="93" value="Ci&#xea;ncias do Ambiente"/>
-                        <StringItem index="94" value="Meteorologia"/>
-                        <StringItem index="95" value="Oceanografia"/>
-                        <StringItem index="96" value="Ecologia"/>
-                        <StringItem index="97" value="Agronomia"/>
-                        <StringItem index="98" value="Zootecnia"/>
-                        <StringItem index="99" value="Engenharia de Software"/>
-                        <StringItem index="100" value="An&#xe1;lise e Desenvolvimento de Sistemas"/>
-                        <StringItem index="101" value="Ci&#xea;ncia de Dados"/>
-                        <StringItem index="102" value="Redes de Computadores"/>
-                        <StringItem index="103" value="Jogos Digitais"/>
-                        <StringItem index="104" value="Hist&#xf3;ria"/>
-                        <StringItem index="105" value="Letras"/>
-                        <StringItem index="106" value="Lingu&#xed;stica"/>
-                        <StringItem index="107" value="Tradu&#xe7;&#xe3;o e Interpreta&#xe7;&#xe3;o"/>
-                        <StringItem index="108" value="Estudos Liter&#xe1;rios"/>
-                        <StringItem index="109" value="Teologia"/>
-                        <StringItem index="110" value="Estudos Culturais"/>
-                        <StringItem index="111" value="Arqueologia"/>
-                        <StringItem index="112" value="Hotelaria"/>
-                        <StringItem index="113" value="Gastronomia"/>
-                        <StringItem index="114" value="Eventos"/>
-                        <StringItem index="115" value="Lazer e Recrea&#xe7;&#xe3;o"/>
+                      <StringArray count="80">
+                        <StringItem index="0" value="Antropologia"/>
+                        <StringItem index="1" value="Arqueologia e Gest&#xe3;o do Patrim&#xf3;nio Cultural"/>
+                        <StringItem index="2" value="Ci&#xea;ncia Pol&#xed;tica"/>
+                        <StringItem index="3" value="Desenvolvimento e Educa&#xe7;&#xe3;o de Inf&#xe2;ncia"/>
+                        <StringItem index="4" value="Educa&#xe7;&#xe3;o Ambiental"/>
+                        <StringItem index="5" value="Ensino de L&#xed;ngua, Literatura e Literatura Chinesa"/>
+                        <StringItem index="6" value="Filosofia"/>
+                        <StringItem index="7" value="Geografia"/>
+                        <StringItem index="8" value="Hist&#xf3;ria"/>
+                        <StringItem index="9" value="L&#xed;ngua de Sinais de Mo&#xe7;ambique"/>
+                        <StringItem index="10" value="Organiza&#xe7;&#xe3;o e Gest&#xe3;o da Educa&#xe7;&#xe3;o"/>
+                        <StringItem index="11" value="Psicologia (Psicologia das Organiza&#xe7;&#xf5;es, Psicologia Social e Comunit&#xe1;ria, Psicologia Escolar e de Necessidades Educativas Especiais)"/>
+                        <StringItem index="12" value="Sociologia"/>
+                        <StringItem index="13" value="Lingu&#xed;stica"/>
+                        <StringItem index="14" value="M&#xfa;sica"/>
+                        <StringItem index="15" value="Teatro"/>
+                        <StringItem index="16" value="Administra&#xe7;&#xe3;o P&#xfa;blica"/>
+                        <StringItem index="17" value="Agronomia"/>
+                        <StringItem index="18" value="Anima&#xe7;&#xe3;o Tur&#xed;stica"/>
+                        <StringItem index="19" value="Arquitetura"/>
+                        <StringItem index="20" value="Arquitetura e Planeamento F&#xed;sico"/>
+                        <StringItem index="21" value="Biblioteconomia"/>
+                        <StringItem index="22" value="Com&#xe9;rcio"/>
+                        <StringItem index="23" value="Comunica&#xe7;&#xe3;o e Extens&#xe3;o Rural"/>
+                        <StringItem index="24" value="Contabilidade e Finan&#xe7;as"/>
+                        <StringItem index="25" value="Direito"/>
+                        <StringItem index="26" value="Economia"/>
+                        <StringItem index="27" value="Economia Agr&#xe1;ria"/>
+                        <StringItem index="28" value="Finan&#xe7;as"/>
+                        <StringItem index="29" value="Gest&#xe3;o"/>
+                        <StringItem index="30" value="Gest&#xe3;o Comercial"/>
+                        <StringItem index="31" value="Gest&#xe3;o de Empresas"/>
+                        <StringItem index="32" value="Gest&#xe3;o de Mercados Tur&#xed;sticos"/>
+                        <StringItem index="33" value="Gest&#xe3;o de Neg&#xf3;cios"/>
+                        <StringItem index="34" value="Gest&#xe3;o Hoteleira"/>
+                        <StringItem index="35" value="Informa&#xe7;&#xe3;o Tur&#xed;stica"/>
+                        <StringItem index="36" value="Jornalismo"/>
+                        <StringItem index="37" value="Marketing e Rela&#xe7;&#xf5;es P&#xfa;blicas"/>
+                        <StringItem index="38" value="Servi&#xe7;o Social"/>
+                        <StringItem index="39" value="Tradu&#xe7;&#xe3;o Portugu&#xea;s/Ingl&#xea;s"/>
+                        <StringItem index="40" value="Tradu&#xe7;&#xe3;o Portugu&#xea;s/Franc&#xea;s"/>
+                        <StringItem index="41" value="Ci&#xea;ncias de Informa&#xe7;&#xe3;o Geogr&#xe1;fica"/>
+                        <StringItem index="42" value="Cartografia e Pesquisa Geol&#xf3;gica"/>
+                        <StringItem index="43" value="Estat&#xed;stica"/>
+                        <StringItem index="44" value="F&#xed;sica Aplicada"/>
+                        <StringItem index="45" value="Geologia Aplicada"/>
+                        <StringItem index="46" value="Geologia Marinha"/>
+                        <StringItem index="47" value="Inform&#xe1;tica"/>
+                        <StringItem index="48" value="Matem&#xe1;tica"/>
+                        <StringItem index="49" value="Meteorologia"/>
+                        <StringItem index="50" value="Oceanografia"/>
+                        <StringItem index="51" value="Qu&#xed;mica Ambiental"/>
+                        <StringItem index="52" value="Qu&#xed;mica Industrial"/>
+                        <StringItem index="53" value="Qu&#xed;mica Marinha"/>
+                        <StringItem index="54" value="Ci&#xea;ncias do Desporto"/>
+                        <StringItem index="55" value="Medicina"/>
+                        <StringItem index="56" value="Engenharia do Ambiente"/>
+                        <StringItem index="57" value="Engenharia Agron&#xf3;mica"/>
+                        <StringItem index="58" value="Engenharia Civil"/>
+                        <StringItem index="59" value="Engenharia El&#xe9;trica"/>
+                        <StringItem index="60" value="Engenharia Eletr&#xf3;nica"/>
+                        <StringItem index="61" value="Engenharia Florestal"/>
+                        <StringItem index="62" value="Engenharia Inform&#xe1;tica"/>
+                        <StringItem index="63" value="Engenharia e Gest&#xe3;o Industrial"/>
+                        <StringItem index="64" value="Engenharia Mec&#xe2;nica"/>
+                        <StringItem index="65" value="Engenharia Qu&#xed;mica"/>
+                        <StringItem index="66" value="Engenharia Rural"/>
+                        <StringItem index="67" value="Agricultura Comercial"/>
+                        <StringItem index="68" value="Agroeconomia e Extens&#xe3;o Agr&#xe1;ria"/>
+                        <StringItem index="69" value="Agro-processamento"/>
+                        <StringItem index="70" value="Ci&#xea;ncias e Tecnologia de Alimentos"/>
+                        <StringItem index="71" value="Ci&#xea;ncia e Tecnologia Animal"/>
+                        <StringItem index="72" value="Medicina Veterin&#xe1;ria"/>
+                        <StringItem index="73" value="Produ&#xe7;&#xe3;o Agr&#xed;cola"/>
+                        <StringItem index="74" value="Produ&#xe7;&#xe3;o Animal"/>
+                        <StringItem index="75" value="Produ&#xe7;&#xe3;o Pesqueira"/>
+                        <StringItem index="76" value="Biologia e Sa&#xfa;de"/>
+                        <StringItem index="77" value="Biologia Aplicada"/>
+                        <StringItem index="78" value="Biologia Marinha, Aqu&#xe1;tica, Costeira"/>
+                        <StringItem index="79" value="Ecologia e Conserva&#xe7;&#xe3;o de Biodiversidade Terrestre"/>
                       </StringArray>
                     </Property>
                   </Properties>

@@ -4,6 +4,11 @@
  */
 package campus.digital.view;
 
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Cursor;
+import javax.swing.JLabel;
+
 /**
  *
  * @author simba
@@ -11,13 +16,80 @@ package campus.digital.view;
 public class AlunoFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AlunoFrame.class.getName());
+    
+    // Base da Aplicação
+    private final Color COR_PRIMARIA = new Color(33, 47, 60);       // Fundo Menu: Azul Marinho Escuro/Quase Preto
+    private final Color COR_SECUNDARIA = new Color(245, 245, 245);   // Fundo Conteúdo: Cinza Quase Branco Suave
 
+    // Efeitos dos Labels (Itens do Menu)
+    private final Color COR_PADRAO_MENU = COR_PRIMARIA;              // Cor Padrão do Fundo do Menu
+    private final Color COR_HOVER_MENU = new Color(44, 62, 80);      // Hover: Tom levemente mais claro (Efeito Sutil)
+
+    private final Color COR_SELECAO_FUNDO = Color.WHITE;             // Fundo Ativo: Branco Puro (Destaque máximo)
+    private final Color COR_SELECAO_TEXTO = COR_PRIMARIA;            // Texto Ativo: Cor escura para contraste no fundo branco
+
+    
+    // Variável para rastrear o label ativo, inicializada como nula
+    private JLabel labelAtivo = null;
+    
+    // 1. Criar o objeto CardLayout
+    CardLayout cl = new CardLayout();
+    
     /**
      * Creates new form Aluno
      */
+    
     public AlunoFrame() {
         initComponents();
-    }
+        
+        
+        
+        // 2. Aplicar o CardLayout ao seu painel principal de controller
+        painelcontroller.setLayout(cl);
+        
+        painelcontroller.add(painelinicio, "INICIO_VIEW");
+        painelcontroller.add(painelnotas, "NOTAS_VIEW");
+        painelcontroller.add(painelpropinas, "PROPINAS_VIEW");
+        painelcontroller.add(painelmensagens, "MENSAGEM_VIEW");
+        painelcontroller.add(painelhorarios, "HORARIO_VIEW");
+        painelcontroller.add(painelperfil, "PERFIL_VIEW");
+        painelcontroller.add(paineldisciplinas, "DISCIPLINA_VIEW");
+ 
+        /*
+        painelinicio.setVisible(true);
+        painelmensagens.setVisible(false);
+        painelpropinas.setVisible(false);
+        painelnotas.setVisible(false);
+        painelhorarios.setVisible(false);
+        paineldisciplinas.setVisible(false);
+        painelperfil.setVisible(false);
+    */
+        }
+    private void limparSelecaoMenu() {
+    // 1. Defina a cor de fundo e texto padrão para TODOS os seus JLabels
+    
+    // Certifique-se de que o nome dos JLabels corresponde ao que você tem no NetBeans (lblInicio, lblDisciplinas, etc.)
+    lblinicio.setBackground(COR_PADRAO_MENU);
+    lblinicio.setForeground(COR_SELECAO_FUNDO); // Texto Branco
+
+    lbldisciplinas.setBackground(COR_PADRAO_MENU);
+    lbldisciplinas.setForeground(COR_SELECAO_FUNDO);
+    
+    lblhorario.setBackground(COR_PADRAO_MENU);
+    lblhorario.setForeground(COR_SELECAO_FUNDO);
+
+    lblnotas.setBackground(COR_PADRAO_MENU);
+    lblnotas.setForeground(COR_SELECAO_FUNDO);
+
+    lblpropinas.setBackground(COR_PADRAO_MENU);
+    lblpropinas.setForeground(COR_SELECAO_FUNDO);
+
+    lblmensagem.setBackground(COR_PADRAO_MENU);
+    lblmensagem.setForeground(COR_SELECAO_FUNDO);
+
+    lblperfil.setBackground(COR_PADRAO_MENU);
+    lblperfil.setForeground(COR_SELECAO_FUNDO);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,26 +100,1622 @@ public class AlunoFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        painelcontroller = new javax.swing.JPanel();
+        painelpropinas = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        painelnotas = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel35 = new javax.swing.JLabel();
+        paineldisciplinas = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        painelhorarios = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        painelmensagens = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        jLabel50 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        scrollmensagem = new javax.swing.JScrollPane();
+        painelreceber_mensagem = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        scrollmensagem1 = new javax.swing.JScrollPane();
+        painelreceber_mensagem1 = new javax.swing.JPanel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        painelperfil = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel71 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel72 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel73 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        painelinicio = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblinicio = new javax.swing.JLabel();
+        lbldisciplinas = new javax.swing.JLabel();
+        lblhorario = new javax.swing.JLabel();
+        lblnotas = new javax.swing.JLabel();
+        lblpropinas = new javax.swing.JLabel();
+        lblmensagem = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        lblperfil = new javax.swing.JLabel();
+        lblperfil1 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/photos/Design sem nome.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        painelcontroller.setBackground(new java.awt.Color(245, 245, 245));
+        painelcontroller.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1919, javax.swing.GroupLayout.PREFERRED_SIZE)
+        painelpropinas.setBackground(new java.awt.Color(255, 255, 153));
+        painelpropinas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel36.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 30)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel36.setText("Propinas e Mensalidades");
+        painelpropinas.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, -1));
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/money-bags.png"))); // NOI18N
+        painelpropinas.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+
+        jTable3.setBackground(new java.awt.Color(255, 255, 255));
+        jTable3.setForeground(new java.awt.Color(255, 255, 255));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Data", "Referencia", "Valor (MT)", "Estado", "Metodo de Pagamento"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jTable3);
+
+        painelpropinas.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 834, 330));
+
+        jLabel38.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel38.setText("00,00MT");
+        painelpropinas.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 590, 80, 20));
+
+        jLabel39.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel39.setText("Circulo de progresso");
+        painelpropinas.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 550, 240, -1));
+
+        jLabel40.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel40.setText("Situacao:");
+        painelpropinas.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, 80, 20));
+
+        jLabel41.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel41.setText("Saldo total a ser pago:");
+        painelpropinas.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, 190, 20));
+
+        jLabel42.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel42.setText("6.500,00MT");
+        painelpropinas.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, 100, 20));
+
+        jLabel43.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel43.setText("Em dia/ Em atraso");
+        painelpropinas.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 150, 20));
+
+        jLabel44.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel44.setText("Multa:");
+        painelpropinas.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 590, 60, 20));
+
+        jLabel45.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel45.setText("6.500,00MT");
+        painelpropinas.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 100, 20));
+
+        jLabel46.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel46.setText("Propina mensal:");
+        painelpropinas.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 130, 20));
+
+        painelcontroller.add(painelpropinas, "card2");
+
+        painelnotas.setBackground(new java.awt.Color(204, 255, 204));
+        painelnotas.setForeground(new java.awt.Color(0, 51, 51));
+        painelnotas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setBackground(new java.awt.Color(30, 60, 90));
+        jLabel7.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 30)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Desempenho Academico");
+        painelnotas.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/calendar.png"))); // NOI18N
+        painelnotas.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+
+        jTable4.setBackground(new java.awt.Color(255, 255, 255));
+        jTable4.setForeground(new java.awt.Color(255, 255, 255));
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Cadeira", "1 Avaliacao", "2 Avaliacao", "Estado", "Media", "Exame", "Estado", "Media"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(jTable4);
+
+        painelnotas.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 834, 400));
+
+        jProgressBar1.setBackground(new java.awt.Color(102, 0, 0));
+        jProgressBar1.setFont(new java.awt.Font("Courier 10 Pitch", 3, 18)); // NOI18N
+        jProgressBar1.setForeground(new java.awt.Color(204, 255, 204));
+        jProgressBar1.setString("75%");
+        jProgressBar1.setStringPainted(true);
+        painelnotas.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 600, 300, 30));
+
+        jLabel35.setFont(new java.awt.Font("FreeSerif", 1, 20)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel35.setText("Progresso");
+        painelnotas.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 560, 90, 20));
+
+        painelcontroller.add(painelnotas, "card3");
+
+        paineldisciplinas.setBackground(new java.awt.Color(153, 204, 255));
+        paineldisciplinas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 51));
+        jButton1.setFont(new java.awt.Font("Cantarell Extra Bold", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Ver Detalhes");
+        paineldisciplinas.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(739, 650, 140, 50));
+
+        jLabel1.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Minhas Disciplinas");
+        paineldisciplinas.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/book_1.png"))); // NOI18N
+        paineldisciplinas.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, -1, 80));
+
+        jTable2.setBackground(new java.awt.Color(255, 255, 255));
+        jTable2.setForeground(new java.awt.Color(255, 255, 255));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Cadeira", "Docente", "Carga Horaria", "Dia de Semana", "Sala", "Media"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+
+        paineldisciplinas.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 834, 514));
+
+        painelcontroller.add(paineldisciplinas, "card4");
+
+        painelhorarios.setBackground(new java.awt.Color(174, 174, 244));
+        painelhorarios.setForeground(new java.awt.Color(232, 240, 254));
+        painelhorarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Horario");
+        painelhorarios.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/horario.png"))); // NOI18N
+        painelhorarios.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
+
+        jTable5.setBackground(new java.awt.Color(255, 255, 255));
+        jTable5.setForeground(new java.awt.Color(255, 255, 255));
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Horario", "Segunda-feira", "Terca-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(jTable5);
+
+        painelhorarios.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 834, 470));
+
+        painelcontroller.add(painelhorarios, "card5");
+
+        painelmensagens.setBackground(new java.awt.Color(102, 255, 102));
+        painelmensagens.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(0, 51, 0), new java.awt.Color(51, 255, 0)));
+        jPanel8.setOpaque(false);
+
+        jLabel47.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 30)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel47.setText("Avisos da Instituicao");
+
+        jTable6.setBackground(new java.awt.Color(255, 255, 255));
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Data", "Assunto", "Mensagem"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(jTable6);
+
+        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/message.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(269, 269, 269)
+                        .addComponent(jLabel50)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel47))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 847, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel47))
+                    .addComponent(jLabel50))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
+
+        painelmensagens.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 900, 300));
+
+        jPanel10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 102, 0), new java.awt.Color(255, 0, 0), new java.awt.Color(0, 153, 153), new java.awt.Color(51, 255, 0)));
+        jPanel10.setOpaque(false);
+
+        jLabel48.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 30)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel48.setText("Mensagens");
+
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/speech-bubble.png"))); // NOI18N
+
+        jPanel11.setBackground(new java.awt.Color(153, 255, 153));
+
+        painelreceber_mensagem.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout painelreceber_mensagemLayout = new javax.swing.GroupLayout(painelreceber_mensagem);
+        painelreceber_mensagem.setLayout(painelreceber_mensagemLayout);
+        painelreceber_mensagemLayout.setHorizontalGroup(
+            painelreceber_mensagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 218, Short.MAX_VALUE)
+        );
+        painelreceber_mensagemLayout.setVerticalGroup(
+            painelreceber_mensagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        scrollmensagem.setViewportView(painelreceber_mensagem);
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel51.setFont(new java.awt.Font("Cantarell", 2, 15)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel51.setText("ID do Docente");
+
+        jLabel52.setFont(new java.awt.Font("Cantarell", 2, 15)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel52.setText("Resposta");
+
+        jLabel53.setFont(new java.awt.Font("Cantarell", 2, 15)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel53.setText("Conteudo");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(scrollmensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel52)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel51)
+                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel53)))
+                        .addGap(17, 17, 17))))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel52, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(scrollmensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel53)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel12.setBackground(new java.awt.Color(153, 255, 153));
+
+        painelreceber_mensagem1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout painelreceber_mensagem1Layout = new javax.swing.GroupLayout(painelreceber_mensagem1);
+        painelreceber_mensagem1.setLayout(painelreceber_mensagem1Layout);
+        painelreceber_mensagem1Layout.setHorizontalGroup(
+            painelreceber_mensagem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 218, Short.MAX_VALUE)
+        );
+        painelreceber_mensagem1Layout.setVerticalGroup(
+            painelreceber_mensagem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        scrollmensagem1.setViewportView(painelreceber_mensagem1);
+
+        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel54.setFont(new java.awt.Font("Cantarell", 2, 15)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel54.setText("ID do Estudante");
+
+        jLabel55.setFont(new java.awt.Font("Cantarell", 2, 15)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel55.setText("Resposta");
+
+        jLabel56.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel56.setText("Conteudo");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(scrollmensagem1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addComponent(jLabel55)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel54)
+                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel56)))
+                        .addGap(17, 17, 17))))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel55, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(scrollmensagem1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addComponent(jLabel56)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jButton3.setBackground(new java.awt.Color(0, 102, 0));
+        jButton3.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Enviar");
+
+        jButton4.setBackground(new java.awt.Color(0, 102, 0));
+        jButton4.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Enviar");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(324, 324, 324)
+                .addComponent(jLabel49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel48)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel49)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel48)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4))
+                .addContainerGap())
+        );
+
+        painelmensagens.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 900, 380));
+
+        painelcontroller.add(painelmensagens, "card6");
+
+        painelperfil.setBackground(new java.awt.Color(204, 204, 204));
+        painelperfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 153), new java.awt.Color(0, 0, 51), new java.awt.Color(102, 102, 255), new java.awt.Color(0, 0, 255)));
+        jPanel13.setOpaque(false);
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel58.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 30)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel58.setText("Identidade");
+        jPanel13.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+
+        jLabel57.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel57.setOpaque(true);
+        jPanel13.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 60, 200, 224));
+
+        jLabel60.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel60.setText("ALN00...");
+        jPanel13.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, -1, -1));
+
+        jLabel61.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel61.setText("Deolano Talfulano");
+        jPanel13.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, -1, 29));
+
+        jLabel62.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel62.setText("Engenharia Informatica");
+        jPanel13.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, -1, 29));
+
+        jLabel64.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel64.setText("Nome do Estudante:");
+        jPanel13.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, 29));
+
+        jLabel65.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel65.setText("C");
+        jPanel13.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, -1, 29));
+
+        jLabel66.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel66.setText("Curso:");
+        jPanel13.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, -1, 29));
+
+        jLabel68.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel68.setText("Turma:");
+        jPanel13.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, -1, 29));
+
+        jLabel67.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel67.setText("1 ano");
+        jPanel13.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 630, -1, 29));
+
+        jLabel69.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel69.setText("Ano Academico:");
+        jPanel13.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, -1, 29));
+
+        jLabel70.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel70.setText("Codigo de Estudante:");
+        jPanel13.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 102));
+        jButton5.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Imagem");
+        jPanel13.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 120, 40));
+
+        painelperfil.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 440, 700));
+
+        jPanel14.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 255), new java.awt.Color(153, 153, 255), new java.awt.Color(0, 0, 51), new java.awt.Color(0, 0, 153)));
+        jPanel14.setOpaque(false);
+
+        jLabel59.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 30)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel59.setText("Informacoes Pessoais");
+
+        jLabel63.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel63.setText("Email:");
+
+        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+
+        jLabel71.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel71.setText("Contacto:");
+
+        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel72.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel72.setText("Endereco:");
+
+        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel73.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel73.setText("Senha:");
+
+        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 102));
+        jButton2.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Actualizar");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel59))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jLabel71)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jLabel63)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jLabel72)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jLabel73)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(159, 159, 159)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel59)
+                .addGap(46, 46, 46)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel63)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel71)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel72)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel73)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        painelperfil.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 460, 450));
+
+        painelcontroller.add(painelperfil, "card7");
+
+        painelinicio.setBackground(new java.awt.Color(232, 240, 254));
+        painelinicio.setForeground(new java.awt.Color(232, 204, 204));
+        painelinicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel18.setFont(new java.awt.Font("Lato", 3, 22)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(50, 50, 50));
+        jLabel18.setText("Engenharia e Gestao de Tecnologias de Informacao e Telecomunicacao");
+        painelinicio.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 36)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(50, 50, 50));
+        jLabel20.setText("Talfulano");
+        painelinicio.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel21.setFont(new java.awt.Font("Lato", 1, 34)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel21.setText("Proxima Aula");
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 25, -1, -1));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 0, 0), new java.awt.Color(255, 0, 0), new java.awt.Color(102, 102, 255), new java.awt.Color(0, 0, 255)));
+
+        jLabel22.setFont(new java.awt.Font("Lato", 1, 30)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel22.setText("Matematica");
+
+        jLabel23.setFont(new java.awt.Font("Lato", 0, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel23.setText("09h:00min as 10h:30min");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(76, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel23)
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 73, 374, -1));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 102, 255), new java.awt.Color(0, 0, 153), new java.awt.Color(102, 0, 0), new java.awt.Color(255, 0, 0)));
+
+        jLabel24.setFont(new java.awt.Font("Lato", 1, 30)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel24.setText("Avisos recentes");
+
+        jLabel25.setFont(new java.awt.Font("Lato", 0, 20)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel25.setText("05 de Novembro");
+
+        jLabel26.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel26.setText("Palestra sobre a paz ");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jLabel25)
+                .addGap(21, 21, 21))
+        );
+
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 267, -1, 150));
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 102), new java.awt.Color(102, 102, 255), new java.awt.Color(255, 0, 0), new java.awt.Color(102, 0, 0)));
+
+        jTable1.setBackground(new java.awt.Color(204, 255, 255));
+        jTable1.setFont(new java.awt.Font("Cantarell Extra Bold", 0, 18)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 0));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cadeira", "Nota"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.addHierarchyListener(new java.awt.event.HierarchyListener() {
+            public void hierarchyChanged(java.awt.event.HierarchyEvent evt) {
+                jTable1HierarchyChanged(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel28.setFont(new java.awt.Font("Lato", 1, 30)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel28.setText("Ultimas Notas");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 25, -1, 220));
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 0, 0), new java.awt.Color(255, 0, 0), new java.awt.Color(102, 102, 255), new java.awt.Color(0, 0, 153)));
+
+        jLabel27.setFont(new java.awt.Font("Lato", 1, 30)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel27.setText("Situacao das Propinas");
+
+        jLabel29.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel29.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel29.setText("Pagamento em dia");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/checked.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel27)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(93, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel27)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel2))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 400, 140));
+
+        painelinicio.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 218, 890, 450));
+
+        jLabel30.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 36)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(50, 50, 50));
+        jLabel30.setText("Bem Vindo,");
+        painelinicio.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        jLabel31.setFont(new java.awt.Font("DejaVu Serif Condensed", 2, 28)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel31.setText("em");
+        painelinicio.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, -1, -1));
+
+        jLabel32.setFont(new java.awt.Font("DejaVu Serif Condensed", 2, 28)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(50, 50, 50));
+        jLabel32.setText("Licenciado");
+        painelinicio.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, -1));
+
+        jLabel33.setFont(new java.awt.Font("DejaVu Serif Condensed", 2, 28)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel33.setText("A");
+        painelinicio.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        jLabel34.setFont(new java.awt.Font("DejaVu Serif Condensed", 2, 28)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(50, 50, 50));
+        jLabel34.setText("caminho de se tornar um");
+        painelinicio.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+
+        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel3.setOpaque(true);
+        painelinicio.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 170, 190));
+
+        painelcontroller.add(painelinicio, "card8");
+
+        getContentPane().add(painelcontroller, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 970, 740));
+
+        jPanel1.setBackground(new java.awt.Color(33, 47, 60));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblinicio.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        lblinicio.setForeground(new java.awt.Color(255, 255, 255));
+        lblinicio.setText("Inicio");
+        lblinicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblinicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblinicioMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblinicioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblinicioMouseExited(evt);
+            }
+        });
+        jPanel1.add(lblinicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 238, 78, -1));
+
+        lbldisciplinas.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        lbldisciplinas.setForeground(new java.awt.Color(255, 255, 255));
+        lbldisciplinas.setText("Minhas Disciplina");
+        lbldisciplinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbldisciplinas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbldisciplinasMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbldisciplinasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbldisciplinasMouseExited(evt);
+            }
+        });
+        jPanel1.add(lbldisciplinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 296, 210, -1));
+
+        lblhorario.setBackground(new java.awt.Color(232, 240, 254));
+        lblhorario.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        lblhorario.setForeground(new java.awt.Color(255, 255, 255));
+        lblhorario.setText("Horario");
+        lblhorario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblhorario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblhorarioMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblhorarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblhorarioMouseExited(evt);
+            }
+        });
+        jPanel1.add(lblhorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 356, 100, -1));
+
+        lblnotas.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        lblnotas.setForeground(new java.awt.Color(255, 255, 255));
+        lblnotas.setText("Notas");
+        lblnotas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblnotas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblnotasMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblnotasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblnotasMouseExited(evt);
+            }
+        });
+        jPanel1.add(lblnotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 420, 100, -1));
+
+        lblpropinas.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        lblpropinas.setForeground(new java.awt.Color(255, 255, 255));
+        lblpropinas.setText("Propinas/ Mensalidades");
+        lblpropinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblpropinas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblpropinasMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblpropinasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblpropinasMouseExited(evt);
+            }
+        });
+        jPanel1.add(lblpropinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 487, -1, -1));
+
+        lblmensagem.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        lblmensagem.setForeground(new java.awt.Color(255, 255, 255));
+        lblmensagem.setText("Mensagens");
+        lblmensagem.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblmensagem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblmensagemMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblmensagemMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblmensagemMouseExited(evt);
+            }
+        });
+        jPanel1.add(lblmensagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 553, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/home_small.png"))); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 236, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/university.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 6, -1, -1));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/book.png"))); // NOI18N
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 294, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/bribe.png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 487, -1, -1));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/pen.png"))); // NOI18N
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 418, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/chat.png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 553, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Quicksand Medium", 1, 36)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Campus");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 58, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Quicksand Medium", 1, 36)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Digital");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 109, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(60, 80, 100));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 0, 0), new java.awt.Color(255, 51, 51), new java.awt.Color(102, 102, 255), new java.awt.Color(51, 0, 153)));
+        jPanel2.setOpaque(false);
+
+        jLabel74.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/calendarno.png"))); // NOI18N
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/logout.png"))); // NOI18N
+
+        jLabel75.setIcon(new javax.swing.ImageIcon(getClass().getResource("/campus/digital/item/user.png"))); // NOI18N
+
+        lblperfil.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        lblperfil.setForeground(new java.awt.Color(255, 255, 255));
+        lblperfil.setText("Perfil");
+        lblperfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblperfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblperfilMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblperfilMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblperfilMouseExited(evt);
+            }
+        });
+
+        lblperfil1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        lblperfil1.setForeground(new java.awt.Color(255, 255, 255));
+        lblperfil1.setText("Logout");
+        lblperfil1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblperfil1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblperfil1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblperfil1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblperfil1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblperfil1))
+                    .addComponent(jLabel74)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel75)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblperfil)))
+                .addContainerGap(197, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(145, 145, 145)
+                .addComponent(jLabel74)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblperfil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel75, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addComponent(lblperfil1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 340, 510));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 390, 740));
+
+        jPanel9.setBackground(new java.awt.Color(0, 150, 200));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1920, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1080, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblinicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseClicked
+        // TODO add your handling code here:
+        // 1. Limpa o destaque de todos os itens (restaura a cor padrão)
+        limparSelecaoMenu();
+    
+        // 2. Aplica o NOVO destaque ao item clicado (Fundo Branco, Texto Azul)
+        lblinicio.setBackground(COR_SELECAO_FUNDO); 
+        lblinicio.setForeground(COR_SELECAO_TEXTO);
+    
+        // 3. Atualiza o CardLayout para mostrar o painel correto
+        cl.show(painelcontroller, "INICIO_VIEW"); // Use o nome do cartão que você definiu
+
+        // 4. ATUALIZA o rastreador de item ativo para o hover funcionar corretamente
+        labelAtivo = lblinicio;
+        /*
+        painelinicio.setVisible(true);
+        painelmensagens.setVisible(false);
+        painelpropinas.setVisible(false);
+        painelnotas.setVisible(false);
+        painelhorarios.setVisible(false);
+        paineldisciplinas.setVisible(false);
+        painelperfil.setVisible(false);
+        */
+    }//GEN-LAST:event_lblinicioMouseClicked
+
+    private void lbldisciplinasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbldisciplinasMouseClicked
+        // TODO add your handling code here:
+        // 1. Limpa o destaque de todos os itens (restaura a cor padrão)
+        limparSelecaoMenu();
+    
+        // 2. Aplica o NOVO destaque ao item clicado (Fundo Branco, Texto Azul)
+        lbldisciplinas.setBackground(COR_SELECAO_FUNDO); 
+        lbldisciplinas.setForeground(COR_SELECAO_TEXTO);
+    
+        // 3. Atualiza o CardLayout para mostrar o painel correto
+        cl.show(painelcontroller, "DISCIPLINA_VIEW"); // Use o nome do cartão que você definiu
+
+        // 4. ATUALIZA o rastreador de item ativo para o hover funcionar corretamente
+        labelAtivo = lbldisciplinas;
+        /*
+        painelinicio.setVisible(false);
+        painelmensagens.setVisible(false);
+        painelpropinas.setVisible(false);
+        painelnotas.setVisible(false);
+        painelhorarios.setVisible(false);
+        paineldisciplinas.setVisible(true);
+        painelperfil.setVisible(false);
+        */
+    }//GEN-LAST:event_lbldisciplinasMouseClicked
+
+    private void lblhorarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblhorarioMouseClicked
+        // TODO add your handling code here:
+        limparSelecaoMenu();
+    
+        // 2. Aplica o NOVO destaque ao item clicado (Fundo Branco, Texto Azul)
+        lblhorario.setBackground(COR_SELECAO_FUNDO); 
+        lblhorario.setForeground(COR_SELECAO_TEXTO);
+    
+        // 3. Atualiza o CardLayout para mostrar o painel correto
+        cl.show(painelcontroller, "HORARIO_VIEW"); // Use o nome do cartão que você definiu
+
+        // 4. ATUALIZA o rastreador de item ativo para o hover funcionar corretamente
+        labelAtivo = lblhorario;
+        /*
+        painelinicio.setVisible(false);
+        painelmensagens.setVisible(false);
+        painelpropinas.setVisible(false);
+        painelnotas.setVisible(false);
+        painelhorarios.setVisible(true);
+        paineldisciplinas.setVisible(false);
+        painelperfil.setVisible(false);
+        */
+    }//GEN-LAST:event_lblhorarioMouseClicked
+
+    private void lblnotasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblnotasMouseClicked
+        // TODO add your handling code here:
+        limparSelecaoMenu();
+    
+        // 2. Aplica o NOVO destaque ao item clicado (Fundo Branco, Texto Azul)
+        lblnotas.setBackground(COR_SELECAO_FUNDO); 
+        lblnotas.setForeground(COR_SELECAO_TEXTO);
+    
+        // 3. Atualiza o CardLayout para mostrar o painel correto
+        cl.show(painelcontroller, "NOTAS_VIEW"); // Use o nome do cartão que você definiu
+
+        // 4. ATUALIZA o rastreador de item ativo para o hover funcionar corretamente
+        labelAtivo = lblnotas;
+        /*
+        painelinicio.setVisible(false);
+        painelmensagens.setVisible(false);
+        painelpropinas.setVisible(false);
+        painelnotas.setVisible(true);
+        painelhorarios.setVisible(false);
+        paineldisciplinas.setVisible(false);
+        painelperfil.setVisible(false);
+        */
+    }//GEN-LAST:event_lblnotasMouseClicked
+
+    private void lblpropinasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblpropinasMouseClicked
+        // TODO add your handling code here:
+        limparSelecaoMenu();
+    
+        // 2. Aplica o NOVO destaque ao item clicado (Fundo Branco, Texto Azul)
+        lblpropinas.setBackground(COR_SELECAO_FUNDO); 
+        lblpropinas.setForeground(COR_SELECAO_TEXTO);
+    
+        // 3. Atualiza o CardLayout para mostrar o painel correto
+        cl.show(painelcontroller, "PROPINAS_VIEW"); // Use o nome do cartão que você definiu
+
+        // 4. ATUALIZA o rastreador de item ativo para o hover funcionar corretamente
+        labelAtivo = lblpropinas;
+        /*
+        painelinicio.setVisible(false);
+        painelmensagens.setVisible(false);
+        painelpropinas.setVisible(true);
+        painelnotas.setVisible(false);
+        painelhorarios.setVisible(false);
+        paineldisciplinas.setVisible(false);
+        painelperfil.setVisible(false);
+        */
+    }//GEN-LAST:event_lblpropinasMouseClicked
+
+    private void lblmensagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmensagemMouseClicked
+        // TODO add your handling code here:
+        limparSelecaoMenu();
+    
+        // 2. Aplica o NOVO destaque ao item clicado (Fundo Branco, Texto Azul)
+        lblmensagem.setBackground(COR_SELECAO_FUNDO); 
+        lblmensagem.setForeground(COR_SELECAO_TEXTO);
+    
+        // 3. Atualiza o CardLayout para mostrar o painel correto
+        cl.show(painelcontroller, "MENSAGEM_VIEW"); // Use o nome do cartão que você definiu
+
+        // 4. ATUALIZA o rastreador de item ativo para o hover funcionar corretamente
+        labelAtivo = lblmensagem;
+        /*
+        painelinicio.setVisible(false);
+        painelmensagens.setVisible(true);
+        painelpropinas.setVisible(false);
+        painelnotas.setVisible(false);
+        painelhorarios.setVisible(false);
+        paineldisciplinas.setVisible(false);
+        painelperfil.setVisible(false);
+        */
+    }//GEN-LAST:event_lblmensagemMouseClicked
+
+    private void lblperfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblperfilMouseClicked
+        // TODO add your handling code here:
+        limparSelecaoMenu();
+    
+        // 2. Aplica o NOVO destaque ao item clicado (Fundo Branco, Texto Azul)
+        lblperfil.setBackground(COR_SELECAO_FUNDO); 
+        lblperfil.setForeground(COR_SELECAO_TEXTO);
+    
+        // 3. Atualiza o CardLayout para mostrar o painel correto
+        cl.show(painelcontroller, "PERFIL_VIEW"); // Use o nome do cartão que você definiu
+
+        // 4. ATUALIZA o rastreador de item ativo para o hover funcionar corretamente
+        labelAtivo = lblperfil;
+        /*
+        painelinicio.setVisible(false);
+        painelmensagens.setVisible(false);
+        painelpropinas.setVisible(false);
+        painelnotas.setVisible(false);
+        painelhorarios.setVisible(false);
+        paineldisciplinas.setVisible(false);
+        painelperfil.setVisible(true);
+        */
+    }//GEN-LAST:event_lblperfilMouseClicked
+
+    private void lblinicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseEntered
+        // TODO add your handling code here
+        if (lblinicio == labelAtivo) {
+            lblinicio.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor Padrão
+        } else {
+            lblinicio.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cursor Mão
+            lblinicio.setBackground(COR_HOVER_MENU);  
+        }
+        
+    }//GEN-LAST:event_lblinicioMouseEntered
+
+    private void lbldisciplinasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbldisciplinasMouseExited
+        // TODO add your handling code here:
+        lbldisciplinas.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor padrão
+    
+        // VERIFICA: Se o JLabel NÃO é o item ativo no momento, volte para a cor padrão.
+        if (lbldisciplinas != labelAtivo) {
+            lbldisciplinas.setBackground(COR_PADRAO_MENU); 
+        }
+    }//GEN-LAST:event_lbldisciplinasMouseExited
+
+    private void lbldisciplinasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbldisciplinasMouseEntered
+        // TODO add your handling code here:
+        if (lbldisciplinas == labelAtivo) {
+            lbldisciplinas.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor Padrão
+        } else {
+            lbldisciplinas.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cursor Mão
+            lbldisciplinas.setBackground(COR_HOVER_MENU);  
+        }
+    }//GEN-LAST:event_lbldisciplinasMouseEntered
+
+    private void lblinicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinicioMouseExited
+        // TODO add your handling code here:
+        lblinicio.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor padrão
+    
+        // VERIFICA: Se o JLabel NÃO é o item ativo no momento, volte para a cor padrão.
+        if (lblinicio != labelAtivo) {
+            lblinicio.setBackground(COR_PADRAO_MENU); 
+        }
+    }//GEN-LAST:event_lblinicioMouseExited
+
+    private void lblhorarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblhorarioMouseEntered
+        // TODO add your handling code here:
+        if (lblhorario == labelAtivo) {
+            lblhorario.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor Padrão
+        } else {
+            lblhorario.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cursor Mão
+            lblhorario.setBackground(COR_HOVER_MENU);  
+        }
+    }//GEN-LAST:event_lblhorarioMouseEntered
+
+    private void lblnotasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblnotasMouseEntered
+        // TODO add your handling code here:
+        if (lblnotas == labelAtivo) {
+            lblnotas.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor Padrão
+        } else {
+            lblnotas.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cursor Mão
+            lblnotas.setBackground(COR_HOVER_MENU);  
+        }
+    }//GEN-LAST:event_lblnotasMouseEntered
+
+    private void lblpropinasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblpropinasMouseEntered
+        // TODO add your handling code here:
+        if (lblpropinas == labelAtivo) {
+            lblpropinas.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor Padrão
+        } else {
+            lblpropinas.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cursor Mão
+            lblpropinas.setBackground(COR_HOVER_MENU);  
+        }
+    }//GEN-LAST:event_lblpropinasMouseEntered
+
+    private void lblmensagemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmensagemMouseEntered
+        // TODO add your handling code here:
+        if (lblmensagem == labelAtivo) {
+            lblmensagem.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor Padrão
+        } else {
+            lblmensagem.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cursor Mão
+            lblmensagem.setBackground(COR_HOVER_MENU);  
+        }
+    }//GEN-LAST:event_lblmensagemMouseEntered
+
+    private void lblperfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblperfilMouseEntered
+        // TODO add your handling code here:
+        if (lblperfil == labelAtivo) {
+            lblperfil.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor Padrão
+        } else {
+            lblperfil.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Cursor Mão
+            lblperfil.setBackground(COR_HOVER_MENU);  
+        }
+    }//GEN-LAST:event_lblperfilMouseEntered
+
+    private void lblhorarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblhorarioMouseExited
+        // TODO add your handling code here:
+        lblhorario.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor padrão
+    
+        // VERIFICA: Se o JLabel NÃO é o item ativo no momento, volte para a cor padrão.
+        if (lblhorario != labelAtivo) {
+            lblhorario.setBackground(COR_PADRAO_MENU); 
+        }
+    }//GEN-LAST:event_lblhorarioMouseExited
+
+    private void lblnotasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblnotasMouseExited
+        // TODO add your handling code here:
+        lblnotas.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor padrão
+    
+        // VERIFICA: Se o JLabel NÃO é o item ativo no momento, volte para a cor padrão.
+        if (lblnotas != labelAtivo) {
+            lblnotas.setBackground(COR_PADRAO_MENU); 
+        }
+    }//GEN-LAST:event_lblnotasMouseExited
+
+    private void lblpropinasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblpropinasMouseExited
+        // TODO add your handling code here:
+        lblpropinas.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor padrão
+    
+        // VERIFICA: Se o JLabel NÃO é o item ativo no momento, volte para a cor padrão.
+        if (lblpropinas != labelAtivo) {
+            lblpropinas.setBackground(COR_PADRAO_MENU); 
+        }
+    }//GEN-LAST:event_lblpropinasMouseExited
+
+    private void lblmensagemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmensagemMouseExited
+        // TODO add your handling code here:
+        lblmensagem.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor padrão
+    
+        // VERIFICA: Se o JLabel NÃO é o item ativo no momento, volte para a cor padrão.
+        if (lblmensagem != labelAtivo) {
+            lblmensagem.setBackground(COR_PADRAO_MENU); 
+        }
+    }//GEN-LAST:event_lblmensagemMouseExited
+
+    private void lblperfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblperfilMouseExited
+        // TODO add your handling code here:
+        lblperfil.setCursor(new Cursor(Cursor.DEFAULT_CURSOR)); // Cursor padrão
+    
+        // VERIFICA: Se o JLabel NÃO é o item ativo no momento, volte para a cor padrão.
+        if (lblperfil != labelAtivo) {
+            lblperfil.setBackground(COR_PADRAO_MENU); 
+        }
+    }//GEN-LAST:event_lblperfilMouseExited
+
+    private void jTable1HierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jTable1HierarchyChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1HierarchyChanged
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void lblperfil1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblperfil1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblperfil1MouseClicked
+
+    private void lblperfil1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblperfil1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblperfil1MouseEntered
+
+    private void lblperfil1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblperfil1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblperfil1MouseExited
 
     /**
      * @param args the command line arguments
@@ -75,6 +1743,139 @@ public class AlunoFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JLabel lbldisciplinas;
+    private javax.swing.JLabel lblhorario;
+    private javax.swing.JLabel lblinicio;
+    private javax.swing.JLabel lblmensagem;
+    private javax.swing.JLabel lblnotas;
+    private javax.swing.JLabel lblperfil;
+    private javax.swing.JLabel lblperfil1;
+    private javax.swing.JLabel lblpropinas;
+    private javax.swing.JPanel painelcontroller;
+    private javax.swing.JPanel paineldisciplinas;
+    private javax.swing.JPanel painelhorarios;
+    private javax.swing.JPanel painelinicio;
+    private javax.swing.JPanel painelmensagens;
+    private javax.swing.JPanel painelnotas;
+    private javax.swing.JPanel painelperfil;
+    private javax.swing.JPanel painelpropinas;
+    private javax.swing.JPanel painelreceber_mensagem;
+    private javax.swing.JPanel painelreceber_mensagem1;
+    private javax.swing.JScrollPane scrollmensagem;
+    private javax.swing.JScrollPane scrollmensagem1;
     // End of variables declaration//GEN-END:variables
 }

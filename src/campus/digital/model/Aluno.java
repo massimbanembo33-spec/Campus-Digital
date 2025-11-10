@@ -4,7 +4,9 @@
  */
 package campus.digital.model;
 
+import java.awt.Color;
 import java.util.Date;
+import javax.swing.JLabel;
 
 /**
  *
@@ -20,12 +22,12 @@ public class Aluno extends Usuarios{
     protected String endereco;
 
     public Aluno(String nome, int ID, char sexo, String numero_de_BI, String nacionalidade, Date data_de_nascimento, int numero_de_celular) {
-        super(nome, ID, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
+        super(nome, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
     // Super quer dizer que vem da nossa super classe, que e "Usuarios" que e a mae das classes (aluno, funcionario e docente)
     } 
 
     public Aluno(String email_do_aluno, String senha, String curso_do_aluno, byte ano_do_aluno, Date ano_da_matricula, String endereco, String nome, int ID, char sexo, String numero_de_BI, String nacionalidade, Date data_de_nascimento, int numero_de_celular) {
-        super(nome, ID, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
+        super(nome, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
         this.email_do_aluno = email_do_aluno;
         this.senha = senha;
         this.curso_do_aluno = curso_do_aluno;
@@ -83,6 +85,5 @@ public class Aluno extends Usuarios{
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    
     
 }

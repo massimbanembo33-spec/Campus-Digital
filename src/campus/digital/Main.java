@@ -37,25 +37,7 @@ public class Main {
     */
     // Essa classe foi criada pura e unicamente para a execucao de testes, (todo modelo que for feito, sera testado aqui), posteriormente sera excluida
     public static void main (String [] args){
-        // Primeiro teste "Aluno"
-        Aluno aluno = new Aluno("Massimba", 1, 'M', "131434830F", "Mocambicana", null, 851544433);
         
-        System.out.println(aluno.getNome());
-        System.out.println(aluno.getID());
-        
-        System.out.println("");
-        
-        Docente docente = new Docente("Haider", 1, 'M', "2491412441N", "Mocambicana", null, 842331324);
-        
-        System.out.println(docente.getNome());
-        System.out.println(docente.getID());
-        
-        System.out.println("");
-        
-        Funcionario funcionario = new Funcionario("Joana", 1, 'F', null, 872343133);
-        
-        System.out.println(funcionario.getNome());
-        System.out.print(funcionario.getID());
     }
     
 }
