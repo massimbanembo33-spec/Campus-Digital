@@ -5,7 +5,7 @@
 
 package campus.digital;
 
-import campus.digital.model.Aluno;
+import campus.digital.model.Estudante;
 import campus.digital.model.Docente;
 import campus.digital.model.Funcionario;
 

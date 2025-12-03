@@ -4,45 +4,58 @@
  */
 package campus.digital.model;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
  *
  * @author simba
  */
-public class Funcionario extends Usuarios {
+public class Funcionario extends Usuarios implements Serializable{
     
-    protected String email_do_funcionario;
-    protected String senha;
-    protected String departamento;
-    protected String turno_de_trabalho;
+    private String ID;
+    private String departamento;
+    private Long conta_bancaria;
+    private char[] senha;
+    private char[] senha_repetida;
+    
+    static int contador = 0;
 
-    public Funcionario(String nome, int ID, char sexo, Date data_de_nascimento, int numero_de_celular) {
-        super(nome, ID, sexo, data_de_nascimento, numero_de_celular);
-    }
-
-    public Funcionario(String email_do_funcionario, String senha, String departamento, String turno_de_trabalho, String nome, int ID, char sexo, Date data_de_nascimento, int numero_de_celular) {
-        super(nome, ID, sexo, data_de_nascimento, numero_de_celular);
-        this.email_do_funcionario = email_do_funcionario;
-        this.senha = senha;
+    public Funcionario() {}
+    
+    public Funcionario(String ID, String departamento, Long conta_bancaria, char[] senha, char[] senha_repetida, String nome, String sexo, String numero_de_BI, int numero_de_NUIT, LocalDate data_de_nascimento, String nacionalidade, int numero_de_celular, String email, String nivel_academico, String turno) {
+        super(nome, sexo, numero_de_BI, numero_de_NUIT, data_de_nascimento, nacionalidade, numero_de_celular, email, nivel_academico, turno);
+        this.ID = ID;
         this.departamento = departamento;
-        this.turno_de_trabalho = turno_de_trabalho;
-    }
-
-    public String getEmail_do_funcionario() {
-        return email_do_funcionario;
-    }
-
-    public void setEmail_do_funcionario(String email_do_funcionario) {
-        this.email_do_funcionario = email_do_funcionario;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
+        this.conta_bancaria = conta_bancaria;
         this.senha = senha;
+        this.senha_repetida = senha_repetida;
+    }
+
+    public char[] getSenha_repetida() {
+        return senha_repetida;
+    }
+
+    public void setSenha_repetida(char[] senha_repetida) {
+        this.senha_repetida = senha_repetida;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+public static void setContador(int valor) {
+    contador = valor;
+}
+    
+    public void gerarID() {
+        contador++;
+        this.ID = String.format("FUN%03d", contador);
     }
 
     public String getDepartamento() {
@@ -53,13 +66,23 @@ public class Funcionario extends Usuarios {
         this.departamento = departamento;
     }
 
-    public String getTurno_de_trabalho() {
-        return turno_de_trabalho;
+    public Long getConta_bancaria() {
+        return conta_bancaria;
     }
 
-    public void setTurno_de_trabalho(String turno_de_trabalho) {
-        this.turno_de_trabalho = turno_de_trabalho;
+    public void setConta_bancaria(Long conta_bancaria) {
+        this.conta_bancaria = conta_bancaria;
     }
+
+    public char[] getSenha() {
+        return senha;
+    }
+
+    public void setSenha(char[] senha) {
+        this.senha = senha;
+    }
+
+    
 
     
 }

@@ -4,6 +4,7 @@
  */
 package campus.digital.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -11,49 +12,66 @@ import java.util.Date;
  *
  * @author simba
  */
-public class Docente extends Usuarios{  
+public class Docente extends Usuarios implements Serializable{  
     
-    protected String ID;
-    protected String email_do_docente;
-    protected char[] senha;
-    protected char[] senha_repetida;
-    protected String cadeira;
-    protected String nivel_academico;
-    protected String horario_de_trabalho;
-
+    private String ID;
+    private String cadeira;
+    private Long conta_bancaria;
+    private char[] senha;
+    private char[] senha_repetida;
+    
     static int contador = 0;
     
     public Docente() {} 
-    
-    public Docente(String nome, String sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
-        super(nome, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
-    }
 
-    public Docente(String email_do_docente, char[] senha, char[] senha_repetida, String cadeira, String nivel_academico, String horario_de_trabalho, String nome, String ID, String sexo, String numero_de_BI, String nacionalidade, LocalDate data_de_nascimento, int numero_de_celular) {
-        super(nome, sexo, numero_de_BI, nacionalidade, data_de_nascimento, numero_de_celular);
-        this.email_do_docente = email_do_docente;
+    public Docente(String ID, String cadeira, Long conta_bancaria, char[] senha, char[] senha_repetida, String nome, String sexo, String numero_de_BI, int numero_de_NUIT, LocalDate data_de_nascimento, String nacionalidade,  int numero_de_celular, String email, String nivel_academico, String turno) {
+        super(nome, sexo, numero_de_BI, numero_de_NUIT, data_de_nascimento, nacionalidade, numero_de_celular, email, nivel_academico, turno);
+        this.ID = ID;
+        this.cadeira = cadeira;
+        this.conta_bancaria = conta_bancaria;
         this.senha = senha;
         this.senha_repetida = senha_repetida;
-        this.cadeira = cadeira;
-        this.nivel_academico = nivel_academico;
-        this.horario_de_trabalho = horario_de_trabalho;
     }
 
+    public static void setContador(int valor) {
+    contador = valor;
+}
     public String getID(){
         return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public Long getConta_bancaria() {
+        return conta_bancaria;
+    }
+
+    public void setConta_bancaria(Long conta_bancaria) {
+        this.conta_bancaria = conta_bancaria;
     }
     
     public void gerarID() {
         contador++;
         this.ID = String.format("DOC%03d", contador);
     }
+     /*
+    O método String.format() formata uma string com base em um modelo (template), parecido com printf() em C.
     
-    public String getEmail_do_docente() {
-        return email_do_docente;
+    DOC  ->   Texto fixo — prefixo que sempre aparece antes do número (podes mudar para ALN, ADM, etc).
+    %    ->   Indica que vem um valor formatado a seguir (é o marcador de posição).
+    0    ->   Significa que os espaços vazios serão preenchidos com zeros à esquerda.
+    3    ->   É a largura mínima — ou seja, o número terá 3 dígitos.
+    d    ->   Diz que o valor é um inteiro (decimal).
+    */
+    
+    public String getCadeira() {
+        return cadeira;
     }
 
-    public void setEmail_do_docente(String email_do_docente) {
-        this.email_do_docente = email_do_docente;
+    public void setCadeira(String cadeira) {
+        this.cadeira = cadeira;
     }
 
     public char[] getSenha() {
@@ -71,32 +89,9 @@ public class Docente extends Usuarios{
     public void setSenha_repetida(char[] senha_repetida) {
         this.senha_repetida = senha_repetida;
     }
-
-    public String getCadeira() {
-        return cadeira;
-    }
-
-    public void setCadeira(String cadeira) {
-        this.cadeira = cadeira;
-    }
-
-    public String getNivel_academico() {
-        return nivel_academico;
-    }
-
-    public void setNivel_academico(String nivel_academico) {
-        this.nivel_academico = nivel_academico;
-    }
-
-    public String getHorario_de_trabalho() {
-        return horario_de_trabalho;
-    }
-
-    public void setHorario_de_trabalho(String horario_de_trabalho) {
-        this.horario_de_trabalho = horario_de_trabalho;
-    }
-    
-    
-  
-    
+   
+    @Override
+    public String toString() {
+        return this.nome; 
+}
 }

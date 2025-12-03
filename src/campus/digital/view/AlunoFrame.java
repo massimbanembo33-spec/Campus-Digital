@@ -17,17 +17,22 @@ public class AlunoFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AlunoFrame.class.getName());
     
-    // Base da Aplicação
-    private final Color COR_PRIMARIA = new Color(33, 47, 60);       // Fundo Menu: Azul Marinho Escuro/Quase Preto
-    private final Color COR_SECUNDARIA = new Color(245, 245, 245);   // Fundo Conteúdo: Cinza Quase Branco Suave
+    private final Color COR_PRIMARIA = new Color(33, 47, 60);
+    private final Color COR_SECUNDARIA = new Color(245, 245, 245);
 
-    // Efeitos dos Labels (Itens do Menu)
-    private final Color COR_PADRAO_MENU = COR_PRIMARIA;              // Cor Padrão do Fundo do Menu
-    private final Color COR_HOVER_MENU = new Color(44, 62, 80);      // Hover: Tom levemente mais claro (Efeito Sutil)
+        // --- MENU INATIVO ---
+    private final Color COR_PADRAO_MENU = COR_PRIMARIA; 
+    private final Color COR_TEXTO_INATIVO = new Color(200, 200, 200); // Cinza claro (não branco puro, para descansar a vista)
 
-    private final Color COR_SELECAO_FUNDO = Color.WHITE;             // Fundo Ativo: Branco Puro (Destaque máximo)
-    private final Color COR_SELECAO_TEXTO = COR_PRIMARIA;            // Texto Ativo: Cor escura para contraste no fundo branco
+        // --- MENU HOVER (Quando passa o rato) ---
+    private final Color COR_HOVER_MENU = new Color(44, 62, 80); 
 
+        // --- MENU SELECIONADO (ATIVO) ---
+        // AQUI ESTÁ O SEGREDO DA HARMONIA:
+        // Usamos um Azul Intermédio (nem muito escuro, nem branco). Ex: "Steel Blue"
+    private final Color COR_SELECAO_FUNDO = new Color(52, 152, 219); // Azul Moderno Vibrante
+    private final Color COR_SELECAO_TEXTO = Color.WHITE; // Texto branco no fundo azul
+    
     
     // Variável para rastrear o label ativo, inicializada como nula
     private JLabel labelAtivo = null;
@@ -41,8 +46,6 @@ public class AlunoFrame extends javax.swing.JFrame {
     
     public AlunoFrame() {
         initComponents();
-        
-        
         
         // 2. Aplicar o CardLayout ao seu painel principal de controller
         painelcontroller.setLayout(cl);
@@ -66,29 +69,27 @@ public class AlunoFrame extends javax.swing.JFrame {
     */
         }
     private void limparSelecaoMenu() {
-    // 1. Defina a cor de fundo e texto padrão para TODOS os seus JLabels
     
-    // Certifique-se de que o nome dos JLabels corresponde ao que você tem no NetBeans (lblInicio, lblDisciplinas, etc.)
     lblinicio.setBackground(COR_PADRAO_MENU);
-    lblinicio.setForeground(COR_SELECAO_FUNDO); // Texto Branco
+    lblinicio.setForeground(COR_TEXTO_INATIVO); // Texto Branco
 
     lbldisciplinas.setBackground(COR_PADRAO_MENU);
-    lbldisciplinas.setForeground(COR_SELECAO_FUNDO);
+    lbldisciplinas.setForeground(COR_TEXTO_INATIVO);
     
     lblhorario.setBackground(COR_PADRAO_MENU);
-    lblhorario.setForeground(COR_SELECAO_FUNDO);
+    lblhorario.setForeground(COR_TEXTO_INATIVO);
 
     lblnotas.setBackground(COR_PADRAO_MENU);
-    lblnotas.setForeground(COR_SELECAO_FUNDO);
+    lblnotas.setForeground(COR_TEXTO_INATIVO);
 
     lblpropinas.setBackground(COR_PADRAO_MENU);
-    lblpropinas.setForeground(COR_SELECAO_FUNDO);
+    lblpropinas.setForeground(COR_TEXTO_INATIVO);
 
     lblmensagem.setBackground(COR_PADRAO_MENU);
-    lblmensagem.setForeground(COR_SELECAO_FUNDO);
+    lblmensagem.setForeground(COR_TEXTO_INATIVO);
 
     lblperfil.setBackground(COR_PADRAO_MENU);
-    lblperfil.setForeground(COR_SELECAO_FUNDO);
+    lblperfil.setForeground(COR_TEXTO_INATIVO);
 }
 
     /**
@@ -217,7 +218,6 @@ public class AlunoFrame extends javax.swing.JFrame {
         lbldisciplinas = new javax.swing.JLabel();
         lblhorario = new javax.swing.JLabel();
         lblnotas = new javax.swing.JLabel();
-        lblpropinas = new javax.swing.JLabel();
         lblmensagem = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -233,6 +233,7 @@ public class AlunoFrame extends javax.swing.JFrame {
         jLabel75 = new javax.swing.JLabel();
         lblperfil = new javax.swing.JLabel();
         lblperfil1 = new javax.swing.JLabel();
+        lblpropinas = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -285,27 +286,27 @@ public class AlunoFrame extends javax.swing.JFrame {
         jLabel39.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 0, 0));
         jLabel39.setText("Circulo de progresso");
-        painelpropinas.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 550, 240, -1));
+        painelpropinas.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 550, 250, -1));
 
         jLabel40.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 0, 0));
         jLabel40.setText("Situacao:");
-        painelpropinas.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, 80, 20));
+        painelpropinas.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, 90, 20));
 
         jLabel41.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(0, 0, 0));
         jLabel41.setText("Saldo total a ser pago:");
-        painelpropinas.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, 190, 20));
+        painelpropinas.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, 210, 20));
 
         jLabel42.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 0, 0));
         jLabel42.setText("6.500,00MT");
-        painelpropinas.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, 100, 20));
+        painelpropinas.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 620, 100, 20));
 
         jLabel43.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 0, 0));
         jLabel43.setText("Em dia/ Em atraso");
-        painelpropinas.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 150, 20));
+        painelpropinas.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 170, 20));
 
         jLabel44.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(0, 0, 0));
@@ -315,12 +316,12 @@ public class AlunoFrame extends javax.swing.JFrame {
         jLabel45.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(255, 0, 0));
         jLabel45.setText("6.500,00MT");
-        painelpropinas.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 100, 20));
+        painelpropinas.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 100, 20));
 
         jLabel46.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 0, 0));
         jLabel46.setText("Propina mensal:");
-        painelpropinas.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 130, 20));
+        painelpropinas.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 160, 20));
 
         painelcontroller.add(painelpropinas, "card2");
 
@@ -757,12 +758,12 @@ public class AlunoFrame extends javax.swing.JFrame {
         jLabel60.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(0, 0, 0));
         jLabel60.setText("ALN00...");
-        jPanel13.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, -1, -1));
+        jPanel13.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 80, -1));
 
         jLabel61.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(0, 0, 0));
         jLabel61.setText("Deolano Talfulano");
-        jPanel13.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, -1, 29));
+        jPanel13.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, -1, 29));
 
         jLabel62.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(0, 0, 0));
@@ -926,7 +927,7 @@ public class AlunoFrame extends javax.swing.JFrame {
 
         jLabel18.setFont(new java.awt.Font("Lato", 3, 22)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(50, 50, 50));
-        jLabel18.setText("Engenharia e Gestao de Tecnologias de Informacao e Telecomunicacao");
+        jLabel18.setText("Engenharia de Tecnologias de Informacao e Telecomunicacao");
         painelinicio.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 36)); // NOI18N
@@ -960,9 +961,9 @@ public class AlunoFrame extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(76, Short.MAX_VALUE))
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1010,7 +1011,7 @@ public class AlunoFrame extends javax.swing.JFrame {
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel26)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel25)
                 .addGap(21, 21, 21))
         );
@@ -1067,7 +1068,7 @@ public class AlunoFrame extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(jLabel28)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1102,8 +1103,8 @@ public class AlunoFrame extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1114,7 +1115,7 @@ public class AlunoFrame extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel29)
                     .addComponent(jLabel2))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 400, 140));
@@ -1189,7 +1190,7 @@ public class AlunoFrame extends javax.swing.JFrame {
                 lbldisciplinasMouseExited(evt);
             }
         });
-        jPanel1.add(lbldisciplinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 296, 210, -1));
+        jPanel1.add(lbldisciplinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 296, 250, -1));
 
         lblhorario.setBackground(new java.awt.Color(232, 240, 254));
         lblhorario.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
@@ -1225,23 +1226,6 @@ public class AlunoFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lblnotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 420, 100, -1));
-
-        lblpropinas.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
-        lblpropinas.setForeground(new java.awt.Color(255, 255, 255));
-        lblpropinas.setText("Propinas/ Mensalidades");
-        lblpropinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblpropinas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblpropinasMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblpropinasMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblpropinasMouseExited(evt);
-            }
-        });
-        jPanel1.add(lblpropinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 487, -1, -1));
 
         lblmensagem.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         lblmensagem.setForeground(new java.awt.Color(255, 255, 255));
@@ -1330,6 +1314,22 @@ public class AlunoFrame extends javax.swing.JFrame {
             }
         });
 
+        lblpropinas.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        lblpropinas.setForeground(new java.awt.Color(255, 255, 255));
+        lblpropinas.setText("Propinas/ Mensalidades");
+        lblpropinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblpropinas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblpropinasMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblpropinasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblpropinasMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -1345,15 +1345,19 @@ public class AlunoFrame extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel75)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblperfil)))
-                .addContainerGap(197, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblpropinas)
+                            .addComponent(lblperfil))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addComponent(jLabel74)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
+                .addGap(97, 97, 97)
+                .addComponent(lblpropinas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblperfil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel75, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -1707,6 +1711,11 @@ public class AlunoFrame extends javax.swing.JFrame {
 
     private void lblperfil1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblperfil1MouseClicked
         // TODO add your handling code here:
+        LoginFrame login = new LoginFrame();
+        
+        login.setVisible(true);
+        
+        this.setVisible(false);
     }//GEN-LAST:event_lblperfil1MouseClicked
 
     private void lblperfil1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblperfil1MouseEntered
